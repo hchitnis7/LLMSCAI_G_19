@@ -1,0 +1,61 @@
+﻿drug_name,atc_code,candidate_mentions,chunk_text
+Karbamazepin,N03AF01,acetazolamid,"Drug: Karbamazepin (ATC: N03AF01)
+Interaction statement: Karbanhydrashämmare: acetazolamid.
+Source: FASS SmPC 4.5"
+Bikalutamid,L02BB03,ketokonazol,"Drug: Bikalutamid (ATC: L02BB03)
+Interaction statement: Försiktighet bör iakttas vid förskrivning av Bicalutamide Bluefish och andra läkemedel som kan hämma läkemedelsoxidation, t.ex. cimetidin och ketokonazol.
+Source: FASS SmPC 4.5"
+Natriumpikosulfat + magnesiumoxid + citronsyra,A06AB58,"karbamazepin, nsaid","Drug: Natriumpikosulfat + magnesiumoxid + citronsyra (ATC: A06AB58)
+Interaction statement: Försiktighet rekommenderas även när CitraFleet används hos patienter som tar NSAID:er eller läkemedel som man vet inducerar SIADH (inadekvat ADH-insöndring), t.ex. tricykliska antidepressiva, selektiva serotoninåterupptagshämmare, antipsykotiska läkemedel och karbamazepin, eftersom dessa läkemedel kan öka risken för vattenretention och/eller elektrolytobalans.
+Source: FASS SmPC 4.5"
+Celecoxib,M01AH01,metotrexat,"Drug: Celecoxib (ATC: M01AH01)
+Interaction statement: Metotrexat Hos patienter med reumatoid artrit har celecoxib ingen statistiskt signifikant effekt på farmakokinetiken (plasma- eller njurclearance) för metotrexat (i reumatologiska doser).
+Source: FASS SmPC 4.5"
+Tapentadol,N02AX06,buprenorfin,"Drug: Tapentadol (ATC: N02AX06)
+Interaction statement: Pharma med blandade agonist/antagonister med aktivitet för μ-opioidreceptorn (t.ex. pentazocine, nalbufin) eller partiella agonister med aktivitet för μ-opioidreceptorn (t.ex. buprenorfin) (se också avsnitt 4.4).
+Source: FASS SmPC 4.5"
+Empagliflozin + metformin,A10BD20,"nsaid, ace-hämmare","Drug: Empagliflozin + metformin (ATC: A10BD20)
+Interaction statement: NSAID, inklusive selektiva cyklooxygenas II-hämmare (COX II-hämmare), ACE-hämmare, angiotensin II-receptorantagonister och diuretika, i synnerhet loopdiuretika.
+Source: FASS SmPC 4.5"
+Orlistat,A08AB01,"digoxin, atorvastatin, fluoxetin, amitriptylin, pravastatin","Drug: Orlistat (ATC: A08AB01)
+Interaction statement: Inga interaktioner Inga interaktioner med amitriptylin, atorvastatin, biguanider, digoxin, fibrater, fluoxetin, losartan, fenytoin, fentermin, pravastatin, nifedipin med gastrointestinalt terapeutiskt system (GITS), andra depotberedningar med nifedipin, sibutramin eller alkohol har observerats.
+Source: FASS SmPC 4.5"
+Lidokain,N01BB02,ciprofloxacin,"Drug: Lidokain (ATC: N01BB02)
+Interaction statement: Andra kända CYP1A2-hämmare: ciprofloxacin.
+Source: FASS SmPC 4.5"
+Desogestrel,G03AC09,"karbamazepin, topiramat, oxkarbazepin","Drug: Desogestrel (ATC: G03AC09)
+Interaction statement: Substanser som ökar clearance av hormonella preventivmedel (minskad preventiv effekt p.g.a. enzyminduktion) t.ex.: Barbiturater, bosentan, karbamazepin, fenytoin, primidon, rifampicin, efavirenz och möjligen också felbamat, griseofulvin, oxkarbazepin, topiramat, rifabutin och (traditionella) växtbaserade läkemedel som innehåller johannesört (Hypericum perforatum).
+Source: FASS SmPC 4.5"
+Acetylsalicylsyra,B01AC06,acetazolamid,"Drug: Acetylsalicylsyra (ATC: B01AC06)
+Interaction statement: Karbanhydrashämmare (acetazolamid) Kan resultera i svår acidos och ökad centralnerös systemtoxicitet vid användning.
+Source: FASS SmPC 4.5"
+Metotrexat,L04AX03,fluorouracil,"Drug: Metotrexat (ATC: L04AX03)
+Interaction statement: Man ska vara medveten om farmakokinetiska interaktioner mellan metotrexat och 5-fluorouracil (ökad t ½ för 5-fluorouracil).
+Source: FASS SmPC 4.5"
+Ibuprofen,M01AE01,"metotrexat, nsaid","Drug: Ibuprofen (ATC: M01AE01)
+Interaction statement: Försiktighet bör iakttas om både NSAID‑preparat och metotrexat ges inom 24 timmar, då plasmahalten av metotrexat kan öka och resultera i ökad toxicitet.
+Source: FASS SmPC 4.5"
+Lisdexamfetamin,N06BA12,haloperidol,"Drug: Lisdexamfetamin (ATC: N06BA12)
+Interaction statement: Haloperidol: Haloperidol blockerar dopaminreceptorerna och hämmar därför de centralstimulerande effekterna av amfetamin.
+Source: FASS SmPC 4.5"
+Karbamazepin,N03AF01,ibuprofen,"Drug: Karbamazepin (ATC: N03AF01)
+Interaction statement: Exempel på sådana läkemedel är: Analgetika, anti-inflammatoriska medel: dextropropoxifen, ibuprofen.
+Source: FASS SmPC 4.5"
+Metoprolol,C07AB02,doxazosin,"Drug: Metoprolol (ATC: C07AB02)
+Interaction statement: Alfa-adrenoceptorantagonister Den akuta posturala hypotoni som kan följa på den första dosen av prazosin eller doxazosin kan förvärras hos patienter som redan tar en betablockerare.
+Source: FASS SmPC 4.5"
+Prasugrel,B01AC22,morfin,"Drug: Prasugrel (ATC: B01AC22)
+Interaction statement: Morfin och andra opioider En fördröjd och minskad exponering för orala P2Y12-hämmare, inklusive prasugrel och dess aktiva metabolit, har observerats hos patienter med akut kranskärlssjukdom som behandlats med morfin.
+Source: FASS SmPC 4.5"
+Oxikodon,N02AA05,pregabalin,"Drug: Oxikodon (ATC: N02AA05)
+Interaction statement: Centraldämpande medel inkluderar men är inte begränsade till: andra opioider, gabapentinoider såsom pregabalin, anxiolytika, hypnotika och sedativa (inklusive bensodiazepiner), antipsykotika, antidepressiva, fentiaziner, neuroleptika, anestetika, muskelrelaxantia, antihistaminer, antiemetika och alkohol.
+Source: FASS SmPC 4.5"
+Metotrexat,L04AX03,kolestyramin,"Drug: Metotrexat (ATC: L04AX03)
+Interaction statement: Kolestyramin kan öka den icke-renala elimineringen av metotrexat genom att interferera med den enterohepatiska cirkulationen.
+Source: FASS SmPC 4.5"
+Buspiron,N05BE01,digoxin,"Drug: Buspiron (ATC: N05BE01)
+Interaction statement: Men buspiron kan in vitro tränga undan svagare proteinbundna läkemedel som digoxin.
+Source: FASS SmPC 4.5"
+Digoxin,C01AA05,metoklopramid,"Drug: Digoxin (ATC: C01AA05)
+Interaction statement: Motilitetsstimulerande och antiemetiska medel: Motilitetsstimulerande läkemedel, så som metoklopramid, kan minska absorptionen av digoxin.
+Source: FASS SmPC 4.5"

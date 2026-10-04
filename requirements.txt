@@ -1,16 +1,16 @@
+# --- From Ayesha (RAG/retrieval) ---
+pandas>=2.0.0
+numpy>=1.26.0
+chromadb>=0.5.0
+sentence-transformers>=3.0.0
+
 # --- OCR ---
 easyocr>=1.7.1
 opencv-python-headless>=4.9.0
 pillow>=10.0.0
-numpy>=1.26.0
 
 # --- Matching ---
 rapidfuzz>=3.6.0
-pandas>=2.0.0
-
-# --- RAG ---
-chromadb>=0.5.0
-sentence-transformers>=3.0.0
 
 # --- LLM + fine-tuning (Hugging Face) ---
 transformers>=4.51.0
@@ -21,11 +21,11 @@ trl>=0.12.0
 datasets>=2.19.0
 huggingface_hub>=0.23.0
 
+# --- UI (deployment teammate's side, listed for reference) ---
+streamlit>=1.35.0
+
 # --- Utilities ---
 python-dotenv>=1.0.0
 tqdm>=4.66.0
 
-torch
-torchvision
-# NOTE: PyTorch is installed separately (see install.sh) so you get the
-# build that matches your GPU/CUDA version.
+# NOTE: install torch separately matching your GPU/CUDA, see install.sh

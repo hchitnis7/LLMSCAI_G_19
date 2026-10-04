@@ -1,0 +1,21 @@
+﻿drug_a,drug_b,atc_a,found,rank
+Karbamazepin,acetazolamid,N03AF01,True,1
+Bikalutamid,ketokonazol,L02BB03,True,1
+Natriumpikosulfat + magnesiumoxid + citronsyra,karbamazepin,A06AB58,True,1
+Celecoxib,metotrexat,M01AH01,True,2
+Tapentadol,buprenorfin,N02AX06,True,1
+Empagliflozin + metformin,nsaid,A10BD20,True,1
+Orlistat,digoxin,A08AB01,True,1
+Lidokain,ciprofloxacin,N01BB02,True,1
+Desogestrel,karbamazepin,G03AC09,True,1
+Acetylsalicylsyra,acetazolamid,B01AC06,True,1
+Metotrexat,fluorouracil,L04AX03,True,1
+Ibuprofen,metotrexat,M01AE01,True,4
+Lisdexamfetamin,haloperidol,N06BA12,True,1
+Karbamazepin,ibuprofen,N03AF01,True,1
+Metoprolol,doxazosin,C07AB02,True,1
+Prasugrel,morfin,B01AC22,True,1
+Oxikodon,pregabalin,N02AA05,True,1
+Metotrexat,kolestyramin,L04AX03,True,1
+Buspiron,digoxin,N05BE01,True,1
+Digoxin,metoklopramid,C01AA05,True,1

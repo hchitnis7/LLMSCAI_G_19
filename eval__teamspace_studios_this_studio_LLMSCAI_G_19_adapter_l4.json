@@ -1,0 +1,1640 @@
+[
+  {
+    "question": "Can I take Pantoprazol together with warfarin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Is it safe to combine Pantoprazol and klaritromycin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Can I take Ondansetron together with amiodaron?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Is it safe to combine Budesonid and ketokonazol?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Is it safe to combine Glimepirid and glukagon?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Can I take sitagliptin together with Dulaglutid?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What happens if I take Sitagliptin and digoxin at the same time?",
+    "gold": "CAUTION",
+    "pred": "CAUTION",
+    "answer": "CAUTION. FASS notes this combination requires monitoring, dose adjustment, or care.\n\nAccording to FASS: Source: FASS SmPC 4.5\n\nThis is not medical advice -- please confirm with a pharmacist or doctor "
+  },
+  {
+    "question": "What happens if I take sitagliptin and Digoxin at the same time?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "I'm on Empagliflozin, can I also take verapamil?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Is it safe to combine Warfarin and amiodaron?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Can I take warfarin together with Itrakonazol?",
+    "gold": "AVOID",
+    "pred": "AVOID",
+    "answer": "AVOID. FASS advises against this combination or recommends it not be used.\n\nAccording to FASS: Source: FASS SmPC 4.5\n\nThis is not medical advice -- please confirm with a pharmacist or doctor before co"
+  },
+  {
+    "question": "What happens if I take warfarin and Topiramat at the same time?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What happens if I take warfarin and Duloxetin at the same time?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Is it safe to combine acetylsalicylsyra and Enalapril?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Can I take acetylsalicylsyra together with Sertralin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "I'm on Tikagrelor, can I also take desmopressin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Can I take Dabigatranetexilat together with verapamil?",
+    "gold": "CAUTION",
+    "pred": "CAUTION",
+    "answer": "CAUTION. FASS notes this combination requires monitoring, dose adjustment, or care.\n\nAccording to FASS: Source: FASS SmPC 4.5\n\nThis is not medical advice -- please confirm with a pharmacist or doctor "
+  },
+  {
+    "question": "Is it safe to combine Apixaban and ketokonazol?",
+    "gold": "AVOID",
+    "pred": "AVOID",
+    "answer": "AVOID. FASS advises against this combination or recommends it not be used.\n\nAccording to FASS: Source: FASS SmPC 4.5\n\nThis is not medical advice -- please confirm with a pharmacist or doctor before co"
+  },
+  {
+    "question": "What happens if I take Digoxin and dronedaron at the same time?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "I'm on digoxin, can I also take Dronedaron?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Can I take Digoxin together with atorvastatin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Can I take digoxin together with Atorvastatin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "I'm on digoxin, can I also take Zolpidem?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "I'm on Digoxin, can I also take salbutamol?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Is it safe to combine flekainid and Cinakalcet?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Is it safe to combine amiodaron and Propranolol?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Is it safe to combine amiodaron and Hydroxizin?",
+    "gold": "DANGEROUS",
+    "pred": "DANGEROUS",
+    "answer": "DANGEROUS. FASS marks this combination as contraindicated or carrying a serious, well-documented risk.\n\nAccording to FASS: Source: FASS SmPC 4.5\n\nThis is not medical advice -- please confirm with a ph"
+  },
+  {
+    "question": "Is it safe to combine dronedaron and Rosuvastatin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Can I take Doxazosin together with sildenafil?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "I'm on doxazosin, can I also take Sildenafil?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What happens if I take hydroklortiazid and Memantin at the same time?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Is it safe to combine Spironolakton and ciklosporin?",
+    "gold": "AVOID",
+    "pred": "AVOID",
+    "answer": "AVOID. FASS advises against this combination or recommends it not be used.\n\nAccording to FASS: Source: FASS SmPC 4.5\n\nThis is not medical advice -- please confirm with a pharmacist or doctor before co"
+  },
+  {
+    "question": "Is it safe to combine metoprolol and Verapamil?",
+    "gold": "AVOID",
+    "pred": "AVOID",
+    "answer": "AVOID. FASS advises against this combination or recommends it not be used.\n\nAccording to FASS: Source: FASS SmPC 4.5\n\nThis is not medical advice -- please confirm with a pharmacist or doctor before co"
+  },
+  {
+    "question": "What happens if I take metoprolol and Celecoxib at the same time?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "I'm on Karvedilol, can I also take fluoxetin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What happens if I take Karvedilol and paroxetin at the same time?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Can I take irbesartan together with Irbesartan + hydroklortiazid?",
+    "gold": "CAUTION",
+    "pred": "CAUTION",
+    "answer": "CAUTION. FASS notes this combination requires monitoring, dose adjustment, or care.\n\nAccording to FASS: Source: FASS SmPC 4.5\n\nThis is not medical advice -- please confirm with a pharmacist or doctor "
+  },
+  {
+    "question": "Can I take Simvastatin together with ketokonazol?",
+    "gold": "DANGEROUS",
+    "pred": "DANGEROUS",
+    "answer": "DANGEROUS. FASS marks this combination as contraindicated or carrying a serious, well-documented risk.\n\nAccording to FASS: Source: FASS SmPC 4.5\n\nThis is not medical advice -- please confirm with a ph"
+  },
+  {
+    "question": "I'm on Pravastatin, can I also take kolestyramin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What happens if I take pravastatin and Ezetimib at the same time?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Is it safe to combine Atorvastatin and ezetimib?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "I'm on atorvastatin, can I also take Ezetimib?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Is it safe to combine Rosuvastatin and itrakonazol?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Can I take ketokonazol together with Desogestrel?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "I'm on ketokonazol, can I also take Tolterodin?",
+    "gold": "AVOID",
+    "pred": "AVOID",
+    "answer": "AVOID. FASS advises against this combination or recommends it not be used.\n\nAccording to FASS: Source: FASS SmPC 4.5\n\nThis is not medical advice -- please confirm with a pharmacist or doctor before co"
+  },
+  {
+    "question": "Can I take klindamycin together with Bensoylperoxid + klindamycin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Is it safe to combine Bensoylperoxid + klindamycin and isotretinoin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What happens if I take takrolimus and Itrakonazol at the same time?",
+    "gold": "AVOID",
+    "pred": "AVOID",
+    "answer": "AVOID. FASS advises against this combination or recommends it not be used.\n\nAccording to FASS: Source: FASS SmPC 4.5\n\nThis is not medical advice -- please confirm with a pharmacist or doctor before co"
+  },
+  {
+    "question": "I'm on takrolimus, can I also take Etoricoxib?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Is it safe to combine Levonorgestrel and erytromycin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "I'm on Desogestrel, can I also take itrakonazol?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What happens if I take tolterodin and Duloxetin at the same time?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Is it safe to combine Fesoterodin and klaritromycin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "I'm on magnesium, can I also take Gabapentin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Is it safe to combine Alfuzosin and itrakonazol?",
+    "gold": "AVOID",
+    "pred": "AVOID",
+    "answer": "AVOID. FASS advises against this combination or recommends it not be used.\n\nAccording to FASS: Source: FASS SmPC 4.5\n\nThis is not medical advice -- please confirm with a pharmacist or doctor before co"
+  },
+  {
+    "question": "I'm on Relugolix + estradiol + noretisteronacetat, can I also take azitromycin?",
+    "gold": "AVOID",
+    "pred": "AVOID",
+    "answer": "AVOID. FASS advises against this combination or recommends it not be used.\n\nAccording to FASS: Source: FASS SmPC 4.5\n\nThis is not medical advice -- please confirm with a pharmacist or doctor before co"
+  },
+  {
+    "question": "Is it safe to combine Erytromycin and flukonazol?",
+    "gold": "CAUTION",
+    "pred": "CAUTION",
+    "answer": "CAUTION. FASS notes this combination requires monitoring, dose adjustment, or care.\n\nAccording to FASS: Source: FASS SmPC 4.5\n\nThis is not medical advice -- please confirm with a pharmacist or doctor "
+  },
+  {
+    "question": "What happens if I take erytromycin and Flukonazol at the same time?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "I'm on erytromycin, can I also take Buprenorfin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Can I take erytromycin together with Citalopram?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "I'm on erytromycin, can I also take Mirtazapin?",
+    "gold": "CAUTION",
+    "pred": "CAUTION",
+    "answer": "CAUTION. FASS notes this combination requires monitoring, dose adjustment, or care.\n\nAccording to FASS: Source: FASS SmPC 4.5\n\nThis is not medical advice -- please confirm with a pharmacist or doctor "
+  },
+  {
+    "question": "Is it safe to combine erytromycin and Metadon?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "I'm on Klaritromycin, can I also take kolkicin?",
+    "gold": "DANGEROUS",
+    "pred": "DANGEROUS",
+    "answer": "DANGEROUS. FASS marks this combination as contraindicated or carrying a serious, well-documented risk.\n\nAccording to FASS: Source: FASS SmPC 4.5\n\nThis is not medical advice -- please confirm with a ph"
+  },
+  {
+    "question": "Can I take klaritromycin together with Rimegepant?",
+    "gold": "AVOID",
+    "pred": "AVOID",
+    "answer": "AVOID. FASS advises against this combination or recommends it not be used.\n\nAccording to FASS: Source: FASS SmPC 4.5\n\nThis is not medical advice -- please confirm with a pharmacist or doctor before co"
+  },
+  {
+    "question": "Can I take klaritromycin together with Hydroxiklorokin?",
+    "gold": "CAUTION",
+    "pred": "CAUTION",
+    "answer": "CAUTION. FASS notes this combination requires monitoring, dose adjustment, or care.\n\nAccording to FASS: Source: FASS SmPC 4.5\n\nThis is not medical advice -- please confirm with a pharmacist or doctor "
+  },
+  {
+    "question": "Is it safe to combine flukonazol and Lakosamid?",
+    "gold": "CAUTION",
+    "pred": "CAUTION",
+    "answer": "CAUTION. FASS notes this combination requires monitoring, dose adjustment, or care.\n\nAccording to FASS: Source: FASS SmPC 4.5\n\nThis is not medical advice -- please confirm with a pharmacist or doctor "
+  },
+  {
+    "question": "Can I take Itrakonazol together with alprazolam?",
+    "gold": "CAUTION",
+    "pred": "CAUTION",
+    "answer": "CAUTION. FASS notes this combination requires monitoring, dose adjustment, or care.\n\nAccording to FASS: Source: FASS SmPC 4.5\n\nThis is not medical advice -- please confirm with a pharmacist or doctor "
+  },
+  {
+    "question": "I'm on itrakonazol, can I also take Zopiklon?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "I'm on Aciklovir, can I also take litium?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What happens if I take Azatioprin and allopurinol at the same time?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What happens if I take azatioprin and Allopurinol at the same time?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Can I take Dexibuprofen together with litium?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What happens if I take Allopurinol and ciklosporin at the same time?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Is it safe to combine Fentanyl and gabapentin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Can I take tramadol together with Venlafaxin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Can I take sumatriptan together with Rizatriptan?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Is it safe to combine Rimegepant and modafinil?",
+    "gold": "AVOID",
+    "pred": "AVOID",
+    "answer": "AVOID. FASS advises against this combination or recommends it not be used.\n\nAccording to FASS: Source: FASS SmPC 4.5\n\nThis is not medical advice -- please confirm with a pharmacist or doctor before co"
+  },
+  {
+    "question": "Can I take karbamazepin together with Melatonin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What happens if I take haloperidol and Citalopram at the same time?",
+    "gold": "CAUTION",
+    "pred": "CAUTION",
+    "answer": "CAUTION. FASS notes this combination requires monitoring, dose adjustment, or care.\n\nAccording to FASS: Source: FASS SmPC 4.5\n\nThis is not medical advice -- please confirm with a pharmacist or doctor "
+  },
+  {
+    "question": "Is it safe to combine klozapin and Citalopram?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Can I take Aripiprazol together with escitalopram?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Can I take Amitriptylin together with metadon?",
+    "gold": "CAUTION",
+    "pred": "CAUTION",
+    "answer": "CAUTION. FASS notes this combination requires monitoring, dose adjustment, or care.\n\nAccording to FASS: Source: FASS SmPC 4.5\n\nThis is not medical advice -- please confirm with a pharmacist or doctor "
+  },
+  {
+    "question": "Can I take paroxetin together with Mirtazapin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "I'm on Galantamin, can I also take pilokarpin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What interactions does Paracetamol + kodein have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What interactions does Fentanyl have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What interactions does Eplerenon have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Relugolix + estradiol + noretisteronacetat?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Paracetamol + kodein?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Dabigatranetexilat?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Cetirizin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Empagliflozin + metformin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Pravastatin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Tirzepatid?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Metronidazol?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Empagliflozin + metformin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Lynestrenol?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What interactions does Bikalutamid have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Melatonin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What interactions does Topiramat have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Latanoprost + netarsudil?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Eplerenon?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Flekainid?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Flekainid?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What interactions does Pioglitazon have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What interactions does Topiramat have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What interactions does Topiramat have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Kalcium?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Prednisolon?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Brimonidin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What interactions does Fentanyl have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Etonogestrel?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Metformin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Topiramat?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Flekainid?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Melatonin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Amitriptylin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Dabigatranetexilat?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Flutikasonpropionat?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Solifenacin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Amitriptylin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Relugolix + estradiol + noretisteronacetat?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What interactions does Amitriptylin have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Fentanyl?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Valaciklovir?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What interactions does Topiramat have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Fentanyl?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Metronidazol?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Beklometasondipropionat + formoterol + glykopyrronium?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Hydrokortison?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Paracetamol + kodein?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What interactions does Empagliflozin + metformin have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Etonogestrel?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Metronidazol?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Flekainid?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Hydrokortison?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What interactions does Flekainid have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Pravastatin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Eplerenon?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Flekainid?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Lynestrenol?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Sevelamer?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What interactions does Metronidazol have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What interactions does Melatonin have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Topiramat?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Cetirizin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Flutikasonpropionat?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Hydrokortison?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What interactions does Empagliflozin + metformin have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What interactions does Allergen, pollen från björk have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Pioglitazon?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What interactions does Fentanyl have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Flutikasonpropionat?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Etonogestrel?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Sildenafil?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Salbutamol?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Beklometasondipropionat + formoterol + glykopyrronium?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What interactions does Bikalutamid have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Eplerenon?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Flekainid?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Latanoprost + netarsudil?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Melatonin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Metronidazol?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Beklometasondipropionat + formoterol + glykopyrronium?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Lynestrenol?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Metformin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Paracetamol + kodein?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Empagliflozin + metformin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Dupilumab?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Flutikasonpropionat?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What interactions does Vaccin mot TBE have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What interactions does Levokabastin have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Paracetamol + kodein?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Topiramat?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Amitriptylin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Relugolix + estradiol + noretisteronacetat?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Fentanyl?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What interactions does Kalcium have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What interactions does Flekainid have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Pravastatin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Letrozol?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What interactions does Amitriptylin have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What interactions does Topiramat have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Beklometasondipropionat + formoterol + glykopyrronium?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Amitriptylin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Fentanyl?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Pravastatin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What interactions does Topiramat have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Allergen, pollen från björk?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What interactions does Dabigatranetexilat have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Tirzepatid?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What interactions does Sildenafil have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Empagliflozin + metformin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What interactions does Pioglitazon have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Paracetamol + kodein?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Beklometasondipropionat + formoterol + glykopyrronium?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Metformin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Topiramat?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Letrozol?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Pravastatin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What interactions does Amitriptylin have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What interactions does Empagliflozin + metformin have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Flekainid?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Pravastatin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Topiramat?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What interactions does Pioglitazon have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What interactions does Metformin have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Paracetamol + kodein?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What interactions does Metronidazol have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Eplerenon?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Solifenacin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Amitriptylin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Amitriptylin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What interactions does Bikalutamid have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Valaciklovir?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Bikalutamid?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Azelainsyra?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Solifenacin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What interactions does Amitriptylin have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Relugolix + estradiol + noretisteronacetat?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Topiramat?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Topiramat?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Melatonin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Mometasonfuroat?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Tirzepatid?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What interactions does Metformin have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Pravastatin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Tirzepatid?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What interactions does Topiramat have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Dabigatranetexilat?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Topiramat?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Dabigatranetexilat?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Paracetamol + kodein?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Empagliflozin + metformin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What interactions does Eplerenon have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Flutikasonpropionat?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Topiramat?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Latanoprost + netarsudil?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What interactions does Mometasonfuroat have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Topiramat?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Lynestrenol?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Dupilumab?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What interactions does Relugolix + estradiol + noretisteronacetat have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Topiramat?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Allergen, pollen från björk?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Empagliflozin + metformin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Flekainid?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Beklometasondipropionat + formoterol + glykopyrronium?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What interactions does Tirzepatid have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What interactions does Fentanyl have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Topiramat?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What interactions does Sevelamer have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Valaciklovir?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Amitriptylin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Metronidazol?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What interactions does Etonogestrel have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Moxonidin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Empagliflozin + metformin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Prednisolon?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Metronidazol?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Salbutamol?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Eplerenon?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Relugolix + estradiol + noretisteronacetat?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Allergen, pollen från björk?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Melatonin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Amitriptylin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What should I be careful about with Fentanyl?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Dabigatranetexilat?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Bikalutamid?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What interactions does Relugolix + estradiol + noretisteronacetat have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Dabigatranetexilat?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "What interactions does Metronidazol have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  },
+  {
+    "question": "Are there any warnings for Solifenacin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.\n\nAccording to "
+  }
+]
