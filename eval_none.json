@@ -1,0 +1,1640 @@
+[
+  {
+    "question": "Can I take Pantoprazol together with warfarin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nThere is no strong evidence that pantoprazol significantly affects the pharmacokinetics of warfarin or the INR (International Normalised Ratio). However, isolated cases of increased INR and pro"
+  },
+  {
+    "question": "Is it safe to combine Pantoprazol and klaritromycin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nNo strong warning is found in the available FASS sources regarding the combination of pantoprazol and clarithromycin. Interaction studies have been conducted with simultaneous administration of"
+  },
+  {
+    "question": "Can I take Ondansetron together with amiodaron?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nThe simultaneous use of ondansetron and amiodarone may increase the risk of arrhythmias, as amiodarone is a cardiotoxic medication. This interaction is noted in the product information, particu"
+  },
+  {
+    "question": "Is it safe to combine Budesonid and ketokonazol?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nThe concurrent use of budesonide and ketoconazole may lead to a significant increase in budesonide plasma concentrations (up to 6-fold), particularly with ketoconazole 200 mg once daily. This i"
+  },
+  {
+    "question": "Is it safe to combine Glimepirid and glukagon?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nGlimepirid and glukagon may interact. Glukagon can reduce the hypoglycemic effect of glimepirid, potentially leading to worsened metabolic control. This interaction may result in reduced effect"
+  },
+  {
+    "question": "Can I take sitagliptin together with Dulaglutid?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nThe co-administration of sitagliptin and dulaglutid has been studied, and no clinically significant interaction is expected. Sitagliptin exposure was not affected by a single 1.5 mg dose of dul"
+  },
+  {
+    "question": "What happens if I take Sitagliptin and digoxin at the same time?",
+    "gold": "CAUTION",
+    "pred": "CAUTION",
+    "answer": "CAUTION  \nWhen taken together, sitagliptin may increase the levels of digoxin in your blood. In studies, the exposure to digoxin (measured as AUC) increased by an average of 11%, and the maximum conce"
+  },
+  {
+    "question": "What happens if I take sitagliptin and Digoxin at the same time?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nTaking sitagliptin and digoxin together may increase the blood levels of digoxin. This could potentially lead to digoxin toxicity, which may cause symptoms such as nausea, vomiting, visual dist"
+  },
+  {
+    "question": "I'm on Empagliflozin, can I also take verapamil?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nThe pharmacokinetics of empagliflozin are not significantly affected by concomitant use of verapamil, a P-gp inhibitor. No clinically relevant interaction has been observed. However, always con"
+  },
+  {
+    "question": "Is it safe to combine Warfarin and amiodaron?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nCombining warfarin and amiodarone may increase the anticoagulant effect of warfarin due to inhibition of warfarin metabolism, primarily via CYP3A4. This can increase the risk of bleeding. Close"
+  },
+  {
+    "question": "Can I take warfarin together with Itrakonazol?",
+    "gold": "AVOID",
+    "pred": "AVOID",
+    "answer": "AVOID  \nTaking warfarin together with itraconazole is not recommended. Although direct studies may not have been conducted, itraconazole likely increases the concentration of warfarin, which can incre"
+  },
+  {
+    "question": "What happens if I take warfarin and Topiramat at the same time?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nTaking warfarin and topiramate together may affect your INR (a measure of blood clotting), so your INR should be carefully monitored. This is because topiramate may influence how warfarin works"
+  },
+  {
+    "question": "What happens if I take warfarin and Duloxetin at the same time?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nTaking warfarin and duloxetine together may increase the INR (International Normalized Ratio), which measures blood clotting. This means there could be a higher risk of bleeding. The interactio"
+  },
+  {
+    "question": "Is it safe to combine acetylsalicylsyra and Enalapril?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nIt is safe to combine acetylsalicylsyra and Enalapril when used at cardiologic doses, according to the FASS SmPC. However, always follow medical advice and monitor for potential side effects su"
+  },
+  {
+    "question": "Can I take acetylsalicylsyra together with Sertralin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nTaking acetylsalicylic acid (aspirin) together with sertralin may increase the risk of bleeding, as both medications can affect blood clotting. This interaction is noted in the product informat"
+  },
+  {
+    "question": "I'm on Tikagrelor, can I also take desmopressin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nThere is no significant interaction between ticagrelor and desmopressin based on clinical pharmacological studies. The simultaneous use of ticagrelor and desmopressin did not affect the pharmac"
+  },
+  {
+    "question": "Can I take Dabigatranetexilat together with verapamil?",
+    "gold": "CAUTION",
+    "pred": "CAUTION",
+    "answer": "CAUTION  \nFörsiktighet ska iakttas vid samtidig användning av dabigatranetexilat och verapamil. När dabigatranetexilat (150 mg) administrerades samtidigt med oralt verapamil ökade C max och AUC för da"
+  },
+  {
+    "question": "Is it safe to combine Apixaban and ketokonazol?",
+    "gold": "AVOID",
+    "pred": "AVOID",
+    "answer": "AVOID  \nCombining apixaban and ketokonazol is not recommended. Ketokonazol is a strong inhibitor of both CYP3A4 and P-gp, which can significantly increase apixaban levels in the blood, leading to a do"
+  },
+  {
+    "question": "What happens if I take Digoxin and dronedaron at the same time?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO: Taking digoxin and dronedarone together can significantly increase the concentration of digoxin in the blood, which may also increase the risk of bradycardia (slow heart rate). Close monitoring "
+  },
+  {
+    "question": "I'm on digoxin, can I also take Dronedaron?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nDronedaron can increase the levels of digoxin in your blood by blocking a protein (P-glycoprotein) that helps remove digoxin from the body. This can raise the risk of digoxin side effects, incl"
+  },
+  {
+    "question": "Can I take Digoxin together with atorvastatin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nSerum levels of digoxin may increase when co-administered with atorvastatin. This could potentially increase the risk of digoxin toxicity. Monitor for signs of digoxin toxicity, such as nausea,"
+  },
+  {
+    "question": "Can I take digoxin together with Atorvastatin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nWhen digoxin and atorvastatin are taken together, there may be a slight increase in digoxin levels at steady state. If concurrent use cannot be avoided, clinical monitoring is recommended (see "
+  },
+  {
+    "question": "I'm on digoxin, can I also take Zolpidem?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nNo significant pharmacokinetic interactions were observed when zolpidem was administered together with digoxin. However, this does not guarantee safety in all cases. Always consult your doctor "
+  },
+  {
+    "question": "I'm on Digoxin, can I also take salbutamol?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nSalbutamol may decrease digoxin serum levels, although the clinical significance of this interaction is not fully established. Monitoring of digoxin levels and clinical response is recommended "
+  },
+  {
+    "question": "Is it safe to combine flekainid and Cinakalcet?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nThe combination of flecainide and cinacalcet may require dose adjustments, particularly because flecainide is a drug with a narrow therapeutic window and is primarily metabolized by CYP2D6. Cin"
+  },
+  {
+    "question": "Is it safe to combine amiodaron and Propranolol?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nThere is limited information suggesting that combining amiodarone and propranolol may increase the risk of pronounced sinus bradycardia in some patients. While no strong warning is issued, caut"
+  },
+  {
+    "question": "Is it safe to combine amiodaron and Hydroxizin?",
+    "gold": "DANGEROUS",
+    "pred": "DANGEROUS",
+    "answer": "DANGEROUS  \nCombining amiodarone and hydroxizin is contraindicated. Both drugs are known to prolong the QT interval and can increase the risk of serious heart rhythm disturbances, including Torsade de"
+  },
+  {
+    "question": "Is it safe to combine dronedaron and Rosuvastatin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nDronedaron 400 mg twice daily, when co-administered with rosuvastatin, results in a 1.4-fold increase in the exposure (AUC) of rosuvastatin. This indicates a moderate pharmacokinetic interactio"
+  },
+  {
+    "question": "Can I take Doxazosin together with sildenafil?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nThe simultaneous use of sildenafil (a phosphodiesterase-5 inhibitor) and doxazosin may lead to symptomatic hypotension in some patients. This means your blood pressure could drop too low, poten"
+  },
+  {
+    "question": "I'm on doxazosin, can I also take Sildenafil?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nYou may take sildenafil while on doxazosin, but caution is advised. In clinical studies, when sildenafil was taken together with doxazosin in patients with benign prostatic hyperplasia, a small"
+  },
+  {
+    "question": "What happens if I take hydroklortiazid and Memantin at the same time?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nWhen taking hydrochlorothiazide and memantine together, the serum concentration of hydrochlorothiazide may potentially decrease. This could affect the effectiveness of hydrochlorothiazide. Moni"
+  },
+  {
+    "question": "Is it safe to combine Spironolakton and ciklosporin?",
+    "gold": "AVOID",
+    "pred": "AVOID",
+    "answer": "AVOID  \nCombining spironolactone and ciclosporin is not recommended because both drugs increase serum potassium levels and can lead to potentially life-threatening interactions.  \n\nThis is not medical"
+  },
+  {
+    "question": "Is it safe to combine metoprolol and Verapamil?",
+    "gold": "AVOID",
+    "pred": "AVOID",
+    "answer": "AVOID  \nCombining metoprolol and verapamil is not recommended. The combination may cause bradycardia (slow heart rate) and hypotension (low blood pressure), as noted in the FASS SmPC. This interaction"
+  },
+  {
+    "question": "What happens if I take metoprolol and Celecoxib at the same time?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nTaking metoprolol and celecoxib together may increase the plasma concentration of metoprolol, as shown in studies where co-administration led to a 1.5-fold increase in metoprolol levels. This i"
+  },
+  {
+    "question": "I'm on Karvedilol, can I also take fluoxetin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nThere is an interaction between carvedilol and fluoxetine, as fluoxetine (a strong CYP2D6 inhibitor) can affect the metabolism of carvedilol. In a study, co-administration led to a 77% increase"
+  },
+  {
+    "question": "What happens if I take Karvedilol and paroxetin at the same time?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nTaking carvedilol and paroxetine together may affect how carvedilol is metabolized in the body. Paroxetine is a strong inhibitor of the CYP2D6 enzyme, which is involved in breaking down carvedi"
+  },
+  {
+    "question": "Can I take irbesartan together with Irbesartan + hydroklortiazid?",
+    "gold": "CAUTION",
+    "pred": "CAUTION",
+    "answer": "CAUTION  \nIrbesartan Hydrochlorothiazide Zentiva contains both irbesartan and hydrochlorothiazide. Taking additional irbesartan (as a separate medication) together with Irbesartan + hydrochlorothiazid"
+  },
+  {
+    "question": "Can I take Simvastatin together with ketokonazol?",
+    "gold": "DANGEROUS",
+    "pred": "DANGEROUS",
+    "answer": "DANGEROUS  \nCombining simvastatin with ketokonazol is contraindicated due to a high risk of myopathy and rhabdomyolysis. Ketokonazol is a potent CYP3A4 inhibitor, which significantly increases simvast"
+  },
+  {
+    "question": "I'm on Pravastatin, can I also take kolestyramin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nConcomitant administration of colestyramine reduces the bioavailability of pravastatin by approximately 40–50%. This interaction is documented in the FASS SmPC (4.5). While this does not necess"
+  },
+  {
+    "question": "What happens if I take pravastatin and Ezetimib at the same time?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nNo clinically significant pharmacokinetic interactions were observed when ezetimib was taken together with pravastatin.  \n\nThis information is not medical advice."
+  },
+  {
+    "question": "Is it safe to combine Atorvastatin and ezetimib?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nThe combination of atorvastatin and ezetimib may increase the risk of muscle-related side effects, such as myopathy. This risk is noted in the product information, particularly when ezetimib is"
+  },
+  {
+    "question": "I'm on atorvastatin, can I also take Ezetimib?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nNo clinically significant pharmacokinetic interactions were observed when ezetimib was given together with atorvastatin.  \n\nThis information is not medical advice."
+  },
+  {
+    "question": "Is it safe to combine Rosuvastatin and itrakonazol?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO\n\nCombining rosuvastatin and itraconazole may increase the exposure to rosuvastatin, as shown by a 1.4-fold increase in AUC (area under the curve) in clinical studies. This indicates a potential f"
+  },
+  {
+    "question": "Can I take ketokonazol together with Desogestrel?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nCo-administration of ketokonazol (a strong CYP3A4 inhibitor) with desogestrel may increase serum concentrations of desogestrel and its active metabolite etonogestrel due to reduced clearance. T"
+  },
+  {
+    "question": "I'm on ketokonazol, can I also take Tolterodin?",
+    "gold": "AVOID",
+    "pred": "AVOID",
+    "answer": "AVOID  \nConcomitant systemic treatment with potent CYP3A4 inhibitors such as ketoconazole is not recommended due to increased serum concentrations of tolterodine in slow CYP2D6 metabolizers, which may"
+  },
+  {
+    "question": "Can I take klindamycin together with Bensoylperoxid + klindamycin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nClinzoyl (klindamycin) should not be used in combination with products containing erythromycin due to possible antagonism against the klindamycin component. However, there is no specific warnin"
+  },
+  {
+    "question": "Is it safe to combine Bensoylperoxid + klindamycin and isotretinoin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nCombining benzoyle peroxide + clindamycin (Clinzoyl) with isotretinoin is not recommended due to potential increased skin irritation and reduced effectiveness of isotretinoin. Benzoyle peroxide"
+  },
+  {
+    "question": "What happens if I take takrolimus and Itrakonazol at the same time?",
+    "gold": "AVOID",
+    "pred": "AVOID",
+    "answer": "AVOID  \nTaking takrolimus and itrakonazol together is not recommended. Itrakonazol may increase the blood levels of takrolimus, which can lead to an increased risk of side effects, including kidney da"
+  },
+  {
+    "question": "I'm on takrolimus, can I also take Etoricoxib?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nThe combination of etoricoxib with takrolimus may increase the risk of kidney damage (nephrotoxicity), even though this specific interaction has not been studied with etoricoxib. This is becaus"
+  },
+  {
+    "question": "Is it safe to combine Levonorgestrel and erytromycin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nErythromycin is a moderate CYP3A4 inhibitor, which may reduce the clearance of levonorgestrel, potentially increasing its plasma concentration. This could theoretically affect the efficacy or s"
+  },
+  {
+    "question": "I'm on Desogestrel, can I also take itrakonazol?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nThe combination of desogestrel and itraconazole may increase the blood levels of desogestrel due to inhibition of the CYP3A4 enzyme by itraconazole. This could potentially increase the risk of "
+  },
+  {
+    "question": "What happens if I take tolterodin and Duloxetin at the same time?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO: When taking tolterodin and duloxetine together, the exposure to tolterodin (measured as AUC) increases by 71% at steady state when duloxetine is administered at 40 mg twice daily. However, the p"
+  },
+  {
+    "question": "Is it safe to combine Fesoterodin and klaritromycin?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Combining fesoterodine with clarithromycin is not recommended without careful consideration, as clarithromycin is a potent CYP3A4 inhibitor. This can increase fesoterodine levels, potentially"
+  },
+  {
+    "question": "I'm on magnesium, can I also take Gabapentin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nYou can take gabapentin while on magnesium, but be aware that antacids containing aluminum and magnesium may reduce the absorption of gabapentin by up to 24%. If you are using magnesium as a su"
+  },
+  {
+    "question": "Is it safe to combine Alfuzosin and itrakonazol?",
+    "gold": "AVOID",
+    "pred": "AVOID",
+    "answer": "AVOID  \nThe simultaneous use of alfuzosin and itraconazole is not recommended because itraconazole is a potent CYP3A4 inhibitor, which can increase alfuzosin blood levels (see section 4.4). This may i"
+  },
+  {
+    "question": "I'm on Relugolix + estradiol + noretisteronacetat, can I also take azitromycin?",
+    "gold": "AVOID",
+    "pred": "AVOID",
+    "answer": "AVOID  \nConcomitant use of azitromycin with Relugolix + estradiol + noretisteronacetat is not recommended due to potential increased exposure to relugolix, which may increase the risk of adverse effec"
+  },
+  {
+    "question": "Is it safe to combine Erytromycin and flukonazol?",
+    "gold": "CAUTION",
+    "pred": "CAUTION",
+    "answer": "CAUTION  \nCombining erythromycin and flukonazol may require dose reduction of other medications metabolized by CYP3A4, and the combination should be used with caution. Both drugs can affect the CYP3A4"
+  },
+  {
+    "question": "What happens if I take erytromycin and Flukonazol at the same time?",
+    "gold": "INFO",
+    "pred": "DANGEROUS",
+    "answer": "DANGEROUS: Taking erythromycin and flukonazol together can increase the risk of cardiotoxicity, including prolonged QT interval and torsades de pointes, which may lead to sudden cardiac death. The sim"
+  },
+  {
+    "question": "I'm on erytromycin, can I also take Buprenorfin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nYou can take buprenorphine while on erythromycin, but close monitoring is required. Erythromycin is a CYP3A4 inhibitor, which can increase buprenorphine levels in the blood, potentially leading"
+  },
+  {
+    "question": "Can I take erytromycin together with Citalopram?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nCitalopram should not be taken together with erythromycin, as both medications can prolong the QT interval, increasing the risk of serious heart rhythm disturbances. This combination is contrai"
+  },
+  {
+    "question": "I'm on erytromycin, can I also take Mirtazapin?",
+    "gold": "CAUTION",
+    "pred": "CAUTION",
+    "answer": "CAUTION  \nYou should exercise caution when taking mirtazapine together with erythromycin, as erythromycin is a potent inhibitor of CYP3A4, an enzyme involved in mirtazapine metabolism. This interactio"
+  },
+  {
+    "question": "Is it safe to combine erytromycin and Metadon?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nThe concurrent use of erythromycin and metadon may lead to increased plasma concentrations of metadon due to erythromycin's inhibition of the CYP3A4 enzyme. This interaction could potentially i"
+  },
+  {
+    "question": "I'm on Klaritromycin, can I also take kolkicin?",
+    "gold": "DANGEROUS",
+    "pred": "DANGEROUS",
+    "answer": "DANGEROUS  \nConcomitant use of clarithromycin and colchicine is contraindicated. Co-administration is expected to increase colchicine exposure, which may lead to serious adverse effects, including lif"
+  },
+  {
+    "question": "Can I take klaritromycin together with Rimegepant?",
+    "gold": "AVOID",
+    "pred": "AVOID",
+    "answer": "AVOID  \nConcomitant administration of rimegepant and strong CYP3A4 inhibitors (e.g. clarithromycin, itraconazole, ritonavir) is not recommended (see section 4.4).  \n\nThis is not medical advice."
+  },
+  {
+    "question": "Can I take klaritromycin together with Hydroxiklorokin?",
+    "gold": "CAUTION",
+    "pred": "CAUTION",
+    "answer": "CAUTION  \nThere is a potential interaction between clarithromycin and hydroxychloroquine. Although no in vivo interaction studies with hydroxychloroquine have been conducted, caution is advised when c"
+  },
+  {
+    "question": "Is it safe to combine flukonazol and Lakosamid?",
+    "gold": "CAUTION",
+    "pred": "CAUTION",
+    "answer": "CAUTION  \nCombining flukonazol and lakosamid is not recommended without caution. Flukonazol is a strong inhibitor of CYP2C9 and CYP3A4 enzymes, which can increase the systemic exposure to lakosamid. T"
+  },
+  {
+    "question": "Can I take Itrakonazol together with alprazolam?",
+    "gold": "CAUTION",
+    "pred": "CAUTION",
+    "answer": "CAUTION  \nItrakonazol may increase the levels of alprazolam in the blood, leading to a higher risk of side effects such as excessive sedation, dizziness, or impaired coordination. Although the maximum"
+  },
+  {
+    "question": "I'm on itrakonazol, can I also take Zopiklon?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nWhen taking zopiklon together with itraconazole, the bioavailability of zopiklon increases by approximately 70% due to inhibition of CYP 3A4 metabolism by itraconazole. This may increase the ri"
+  },
+  {
+    "question": "I'm on Aciklovir, can I also take litium?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nIf you are taking lithium together with high-dose intravenous aciclovir, your lithium blood levels should be closely monitored due to the risk of lithium toxicity. Your doctor may need to adjus"
+  },
+  {
+    "question": "What happens if I take Azatioprin and allopurinol at the same time?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nTaking azathioprine and allopurinol together requires a significant dose reduction of azathioprine to 25% of the original dose (see section 4.2). This combination has been associated with fatal"
+  },
+  {
+    "question": "What happens if I take azatioprin and Allopurinol at the same time?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nWhen azathioprine is taken together with allopurinol, a xanthine oxidase inhibitor, the effect of azathioprine is prolonged. This can lead to increased serum levels of azathioprine or its activ"
+  },
+  {
+    "question": "Can I take Dexibuprofen together with litium?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nDexibuprofen may increase lithium levels in the blood when taken together. This could potentially lead to lithium toxicity. Monitor lithium levels closely if you are taking both medications. Al"
+  },
+  {
+    "question": "What happens if I take Allopurinol and ciklosporin at the same time?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO: Taking allopurinol and ciklosporin together may increase the plasma concentration of ciklosporin. This could potentially increase the risk of ciklosporin-related side effects. Close monitoring i"
+  },
+  {
+    "question": "Is it safe to combine Fentanyl and gabapentin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nCombining fentanyl and gabapentin may increase the risk of central nervous system (CNS) depression, which can lead to serious side effects such as respiratory depression, low blood pressure, de"
+  },
+  {
+    "question": "Can I take tramadol together with Venlafaxin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nCombining tramadol with venlafaxin may increase the risk of serotonin syndrome, a potentially life-threatening condition. Both drugs affect the serotonergic system, and their concurrent use sho"
+  },
+  {
+    "question": "Can I take sumatriptan together with Rizatriptan?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nTaking sumatriptan together with rizatriptan is not recommended due to the risk of additive effects on 5-HT IB/ID receptors, which may increase the risk of coronary artery vasoconstriction and "
+  },
+  {
+    "question": "Is it safe to combine Rimegepant and modafinil?",
+    "gold": "AVOID",
+    "pred": "AVOID",
+    "answer": "AVOID  \nCombining rimegepant and modafinil is not recommended, as modafinil is a moderate CYP3A4 inducer, and co-administration with rimegepant may reduce its effectiveness. This interaction is specif"
+  },
+  {
+    "question": "Can I take karbamazepin together with Melatonin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nDosage adjustment of melatonin may be needed when taken together with carbamazepine, as carbamazepine is a CYP1A2 inducer and can reduce melatonin levels. Monitor for reduced effectiveness of m"
+  },
+  {
+    "question": "What happens if I take haloperidol and Citalopram at the same time?",
+    "gold": "CAUTION",
+    "pred": "CAUTION",
+    "answer": "CAUTION  \nTaking haloperidol and citalopram together may increase the risk of QT interval prolongation, which can lead to serious heart rhythm disturbances, including a potentially life-threatening co"
+  },
+  {
+    "question": "Is it safe to combine klozapin and Citalopram?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nNo significant clinically relevant interaction was observed when citalopram was combined with klozapin, which is a substrate for CYP1A2. The available data from the FASS SmPC indicate that any "
+  },
+  {
+    "question": "Can I take Aripiprazol together with escitalopram?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nWhen aripiprazole is taken together with escitalopram, a moderate increase in plasma concentration of aripiprazole may be expected, as escitalopram is a weak inhibitor of CYP2D6, an enzyme invo"
+  },
+  {
+    "question": "Can I take Amitriptylin together with metadon?",
+    "gold": "CAUTION",
+    "pred": "CAUTION",
+    "answer": "CAUTION: You should exercise caution when taking amitriptyline together with methadone due to a possible additive effect on the QT interval and an increased risk of serious cardiovascular effects. Alw"
+  },
+  {
+    "question": "Can I take paroxetin together with Mirtazapin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nNo relevant pharmacokinetic interactions have been shown when mirtazapine is used together with paroxetine, amitriptyline, risperidone, or lithium.  \n\nThis information is based on available dat"
+  },
+  {
+    "question": "I'm on Galantamin, can I also take pilokarpin?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Galantamin should not be given together with other cholinomimetics, such as pilocarpin, due to their similar mechanisms of action. Combining them may increase the risk of cholinergic side eff"
+  },
+  {
+    "question": "What interactions does Paracetamol + kodein have?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Paracetamol + kodein may increase the risk of hepatotoxicity (liver damage) with prolonged use, especially at doses of 1.5–2.0 g paracetamol per day over at least 5–7 days. The effect appears"
+  },
+  {
+    "question": "What interactions does Fentanyl have?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION  \nFentanyl may interact with other central nervous system depressants, such as benzodiazepines, opioids, sedatives, and alcohol, increasing the risk of respiratory depression, sedation, and co"
+  },
+  {
+    "question": "What interactions does Eplerenon have?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION  \nEplerenon may increase the risk of hyperkalemia when used in combination with ACE inhibitors and/or angiotensin receptor blockers (ARBs).  \n\nThis is not medical advice."
+  },
+  {
+    "question": "What should I be careful about with Relugolix + estradiol + noretisteronacetat?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Relugolix, one component of this medication, may have reduced effectiveness when taken with certain other drugs. The interaction data indicates a change in effect, though specific details on "
+  },
+  {
+    "question": "Are there any warnings for Paracetamol + kodein?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: There are documented interactions for Paracetamol + Kodein based on studies in healthy volunteers and/or pilot studies in patients. Always consult a healthcare professional before use, especi"
+  },
+  {
+    "question": "Are there any warnings for Dabigatranetexilat?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Concurrent use of P-gp inhibitors is expected to increase plasma concentrations of dabigatran. Refer to Table 8 for a list of P-gp inhibitors. This may increase the risk of bleeding. Always c"
+  },
+  {
+    "question": "What should I be careful about with Cetirizin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nCetirizin has a favorable profile regarding pharmacokinetics, pharmacodynamics, and tolerability, and no significant interactions are expected with other medications. However, always follow the"
+  },
+  {
+    "question": "What should I be careful about with Empagliflozin + metformin?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: When taking Empagliflozin + metformin, be aware of potential changes in kidney function, as this combination may affect the kidneys, especially in patients with pre-existing kidney issues. Mo"
+  },
+  {
+    "question": "What should I be careful about with Pravastatin?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Be cautious if you are taking other medications that may increase pravastatin exposure, as this could potentially raise the risk of side effects. Always inform your doctor or pharmacist about"
+  },
+  {
+    "question": "Are there any warnings for Tirzepatid?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nThe provided source does not indicate any specific warnings for Tirzepatid (Mounjaro) regarding drug interactions, particularly concerning a single dose. The statement refers to a non-clinicall"
+  },
+  {
+    "question": "What should I be careful about with Metronidazol?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: When taking metronidazole, avoid alcohol completely, as it can cause a disulfiram-like reaction, which may lead to severe symptoms such as flushing, nausea, vomiting, headache, and rapid hear"
+  },
+  {
+    "question": "Are there any warnings for Empagliflozin + metformin?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Empagliflozin, a component of Empagliflozin + metformin, may enhance the diuretic effect of thiazide and loop diuretics, increasing the risk of dehydration and hypotension. Monitor for signs "
+  },
+  {
+    "question": "Are there any warnings for Lynestrenol?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: When using Lynestrenol (Exlutena), a barrier method should be used as a supplement or another contraceptive method should be chosen, due to potential reduced effectiveness when used with cert"
+  },
+  {
+    "question": "What interactions does Bikalutamid have?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION  \nBikalutamid may interact with anticoagulants, particularly coumarin-type anticoagulants (e.g., warfarin). Close monitoring of PT/INR is recommended when bikalutamid is used concurrently, and"
+  },
+  {
+    "question": "What should I be careful about with Melatonin?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Avoid consuming alcohol with melatonin, as this combination may reduce melatonin's effect on sleep. This information is based on the FASS SmPC 4.5. Always consult a pharmacist or doctor for p"
+  },
+  {
+    "question": "What interactions does Topiramat have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO: Topiramate did not significantly affect the exposure to NET (nortriptyline) in two studies, according to the FASS SmPC 4.5. No other interactions are mentioned in the provided source. For a comp"
+  },
+  {
+    "question": "What should I be careful about with Latanoprost + netarsudil?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: In vitro studies have shown that netarsudil may inhibit CYP450 enzymes in the cornea, but no clinical evidence of local pharmacokinetic interaction has been observed so far. Monitor for any u"
+  },
+  {
+    "question": "What should I be careful about with Eplerenon?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: When taking eplerenone with mild to moderate CYP3A4 inhibitors, the daily dose should not exceed 25 mg. This is due to potential increased risk of side effects, such as hyperkalemia (high pot"
+  },
+  {
+    "question": "Are there any warnings for Flekainid?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: When combining flecainide with other medications, dose reduction of flecainide by 50% may be necessary if co-administration is unavoidable. Plasma concentrations should be monitored, and the "
+  },
+  {
+    "question": "Are there any warnings for Flekainid?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Flekainid (Tambocor) should not be used together with other class I antiarrhythmics due to the risk of increased adverse effects, including proarrhythmia. Always consult a healthcare professi"
+  },
+  {
+    "question": "What interactions does Pioglitazon have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO: Pioglitazon does not appear to affect the pharmacokinetics of sulfonylureas when administered together, according to the FASS SmPC 4.5. No other interactions are mentioned in the provided source"
+  },
+  {
+    "question": "What interactions does Topiramat have?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION  \nTopiramat may increase the risk of kidney stones when used together with other medications that predispose to kidney stones.  \n\nThis is not medical advice."
+  },
+  {
+    "question": "What interactions does Topiramat have?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Topiramate may reduce the exposure to ethinylestradiol (EE), a component of some hormonal contraceptives. This effect appears to be dose-dependent at higher doses (200–800 mg/day), but no sig"
+  },
+  {
+    "question": "Are there any warnings for Kalcium?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: When using calcium, there is a warning that the toxicity of cardiac glycosides may increase due to hypercalcemia. This interaction should be carefully considered, especially in patients recei"
+  },
+  {
+    "question": "Are there any warnings for Prednisolon?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION  \nPrednisolon, like other glucocorticoids, may interact with other medications, and these interactions are likely to apply to the entire group of glucocorticoids. Always consult a healthcare p"
+  },
+  {
+    "question": "What should I be careful about with Brimonidin?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Be cautious if you are taking medications that can affect the metabolism or absorption of circulating amines, such as chlorpromazine, methylphenidate, or reserpine, while using brimonidine. T"
+  },
+  {
+    "question": "What interactions does Fentanyl have?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Fentanyl may interact with other central nervous system depressants, such as opioids, benzodiazepines, sedatives, hypnotics, alcohol, and certain antidepressants. These interactions can lead "
+  },
+  {
+    "question": "What should I be careful about with Etonogestrel?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Be aware that the effectiveness of Etonogestrel (Nexplanon) may decrease if you are using medications or natural products that induce liver enzymes. This includes certain antiepileptics, tube"
+  },
+  {
+    "question": "Are there any warnings for Metformin?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Metformin carries a warning regarding the use of iodinated contrast media. Intravenous administration of iodinated contrast agents can lead to kidney impairment, which may result in the accum"
+  },
+  {
+    "question": "What should I be careful about with Topiramat?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO: No strong warnings were found in the provided sources regarding specific precautions for Topiramat. However, it is important to note that Topiramat may have effects on the central nervous system"
+  },
+  {
+    "question": "What should I be careful about with Flekainid?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: When taking Flekainid, be cautious about potential additive negative inotropic effects when used together with beta-blockers or other heart-compensating medications. This may affect heart fun"
+  },
+  {
+    "question": "What should I be careful about with Melatonin?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Melatonin may interact with other medications that affect the central nervous system, such as tioridazine and imipramine. These interactions have been studied, and caution is advised when usi"
+  },
+  {
+    "question": "What should I be careful about with Amitriptylin?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: When taking Amitriptylin, be cautious about consuming alcohol, as it can increase plasma concentrations of free amitriptylin and nortriptyline. This may enhance side effects such as drowsines"
+  },
+  {
+    "question": "Are there any warnings for Dabigatranetexilat?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: There is a caution regarding the use of dabigatran etexilate with amiodarone. Due to the long half-life of amiodarone, the risk of interaction may persist for weeks after discontinuation of a"
+  },
+  {
+    "question": "Are there any warnings for Flutikasonpropionat?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Flutikasonpropionat may have significantly increased plasma concentrations when co-administered with strong CYP3A4 inhibitors such as ritonavir, which may lead to systemic corticosteroid effe"
+  },
+  {
+    "question": "What should I be careful about with Solifenacin?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Solifenacin is unlikely to affect the clearance of medications metabolized by CYP enzymes, but always inform your healthcare provider about all medications you are taking. Monitor for side ef"
+  },
+  {
+    "question": "What should I be careful about with Amitriptylin?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Be cautious when taking amitriptyline with strong CYP2D6 inhibitors such as bupropion, fluoxetine, paroxetine, and quinidine, as these can increase amitriptyline levels and potentially lead t"
+  },
+  {
+    "question": "Are there any warnings for Relugolix + estradiol + noretisteronacetat?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Ritonavir, telaprevir, and nelfinavir are known to be strong inhibitors but also inducers, and may reduce the exposure to estrogens and progestogens. This could potentially affect the efficac"
+  },
+  {
+    "question": "What interactions does Amitriptylin have?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION  \nAmitriptylin may enhance cardiovascular effects when used with sympathomimetics such as adrenaline, ephedrine, isoprenaline, noradrenaline, phenylephrine, and phenylpropanolamine (e.g., comp"
+  },
+  {
+    "question": "Are there any warnings for Fentanyl?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: The use of certain medications simultaneously with Fentanyl ratiopharm requires careful monitoring and supervision. Always consult a healthcare professional when combining Fentanyl with other"
+  },
+  {
+    "question": "What should I be careful about with Valaciklovir?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Valaciclovir may increase the plasma concentrations of other medications taken at the same time. This could potentially lead to increased side effects or reduced effectiveness of the other dr"
+  },
+  {
+    "question": "What interactions does Topiramat have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO: According to the provided FASS source, adding topiramate to lamotrigine did not affect the plasma concentration of lamotrigine at steady state when topiramate doses ranged from 100 to 400 mg/day"
+  },
+  {
+    "question": "Are there any warnings for Fentanyl?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Fentanyl may interact with certain medications that can reduce its plasma concentration, including carbamazepine, phenobarbital, phenytoin, and rifampicin. These interactions may affect the e"
+  },
+  {
+    "question": "Are there any warnings for Metronidazol?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Metronidazol may interfere with certain laboratory tests due to its absorbance peak at 322 nm, which is close to the absorbance peak of NADH at 340 nm at pH 7. This can potentially lead to in"
+  },
+  {
+    "question": "What should I be careful about with Beklometasondipropionat + formoterol + glykopyrronium?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: When using Beklometasondipropionat + formoterol + glykopyrronium, be cautious if also taking cimetidin, as it may lead to a 16% increase in systemic exposure to glykopyrronium and a 20% reduc"
+  },
+  {
+    "question": "Are there any warnings for Hydrokortison?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: There is a warning regarding potential interaction with all competitive neuromuscular blockers when using hydrocortisone. This interaction may be expected and should be considered during trea"
+  },
+  {
+    "question": "What should I be careful about with Paracetamol + kodein?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: When using Paracetamol + Kodein, be cautious of increased risk of liver toxicity (hepatotoxicity) due to faster and increased formation of toxic metabolites. This risk is heightened with exce"
+  },
+  {
+    "question": "What interactions does Empagliflozin + metformin have?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Empagliflozin + metformin may interact with drugs that induce UGT enzymes. If such inducers are used concurrently, it is advisable to monitor glycaemic control to assess the response to Synja"
+  },
+  {
+    "question": "What should I be careful about with Etonogestrel?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: When using Etonogestrel (Nexplanon), you should be aware that the implant does not need to be removed, but women are recommended to use an additional non-hormonal contraceptive method during "
+  },
+  {
+    "question": "Are there any warnings for Metronidazol?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Metronidazole may increase the plasma concentration of warfarin and other coumarin anticoagulants, leading to an increased risk of bleeding due to prolonged prothrombin time. Close monitoring"
+  },
+  {
+    "question": "Are there any warnings for Flekainid?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: There is a warning regarding the use of flekainid with antimalarial medications, as they can increase the plasma concentration of flekainid. This may increase the risk of adverse effects. Alw"
+  },
+  {
+    "question": "What should I be careful about with Hydrokortison?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: When taking hydrocortisone, be cautious if also using potassium-lowering medications (such as diuretics), as this combination increases the risk of low potassium levels (hypokalemia). Monitor"
+  },
+  {
+    "question": "What interactions does Flekainid have?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Flekainid (Tambocor) should be used with caution when combined with calcium channel blockers such as verapamil, as this combination may increase the risk of adverse effects. No other specific"
+  },
+  {
+    "question": "Are there any warnings for Pravastatin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nPravastatin is not metabolized by the cytochrome P450 system in a clinically significant way, which means it has a lower potential for drug interactions via this pathway. However, this does not"
+  },
+  {
+    "question": "What should I be careful about with Eplerenon?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO: Eplerenon may be used with warfarin, and no clinically significant pharmacokinetic interactions have been observed. However, always monitor for any signs of bleeding or changes in INR when using"
+  },
+  {
+    "question": "What should I be careful about with Flekainid?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: When taking flekainid, be cautious about using other class I antiarrhythmics such as quinidine, as they can increase flekainid levels by inhibiting the CYP2D6 enzyme. This may raise the risk "
+  },
+  {
+    "question": "Are there any warnings for Lynestrenol?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nThere are no specific warnings mentioned in the provided FASS source for Lynestrenol. However, if a tablet is missed, the instructions in section 4.2 of the SmPC should be followed. This inform"
+  },
+  {
+    "question": "What should I be careful about with Sevelamer?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Sevelamer may reduce the absorption of other medications due to its binding properties. To avoid potential interactions, take other medications at least one hour before or three hours after t"
+  },
+  {
+    "question": "What interactions does Metronidazol have?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Metronidazol may interact with cimetidin, which can reduce the plasma clearance of metronidazol by approximately 30%. This could potentially increase metronidazol levels in the blood. Monitor"
+  },
+  {
+    "question": "What interactions does Melatonin have?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Melatonin may have significant interactions with drugs that inhibit CYP1A2, such as fluvoxamine. Co-administration with fluvoxamine can lead to a substantial increase in melatonin plasma conc"
+  },
+  {
+    "question": "What should I be careful about with Topiramat?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: The clinical relevance of some observations regarding Topiramat has not been established. Always follow the guidance in the package leaflet and consult your doctor or pharmacist if you have c"
+  },
+  {
+    "question": "What should I be careful about with Cetirizin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO: No significant pharmacodynamic or pharmacokinetic interactions have been reported with cetirizine, including with pseudoephedrine or theophylline (400 mg/day). However, always follow the recomme"
+  },
+  {
+    "question": "Are there any warnings for Flutikasonpropionat?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Use of fluticasone propionate may lead to decreased cortisol levels and adrenal suppression, as reported in the literature. This is particularly relevant with long-term or high-dose use, espe"
+  },
+  {
+    "question": "What should I be careful about with Hydrokortison?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: When taking hydrocortisone, you should be carefully monitored for changes in blood electrolytes, especially potassium levels. This is particularly important if you are taking other medication"
+  },
+  {
+    "question": "What interactions does Empagliflozin + metformin have?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: When used in combination with insulin or an insulin secretagogue, the dose of insulin or insulin secretagogue may need to be reduced to lower the risk of hypoglycemia. This interaction is spe"
+  },
+  {
+    "question": "What interactions does Allergen, pollen från björk have?",
+    "gold": "INFO",
+    "pred": "DANGEROUS",
+    "answer": "DANGEROUS  \nAllergen, pollen från björk (Alutard SQ Björk) kan ha viktiga interaktioner med TCA, MAO-hämmare, COMT-hämmare, betablockerare och antacida. För detaljerad information om dessa interaktion"
+  },
+  {
+    "question": "What should I be careful about with Pioglitazon?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: When taking pioglitazon, be cautious if also using rifampicin, as it can reduce the effectiveness of pioglitazon by up to 54% due to increased metabolism via CYP450 2C8. Monitor blood glucose"
+  },
+  {
+    "question": "What interactions does Fentanyl have?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Fentanyl may interact with drugs that induce CYP3A4 enzymes. Concurrent use of transdermal fentanyl and CYP3A4 inducers can lead to decreased plasma concentrations of fentanyl and reduced the"
+  },
+  {
+    "question": "What should I be careful about with Flutikasonpropionat?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Be cautious when using fluticasone propionate in combination with other medications, as such combinations should be avoided unless the benefit outweighs the increased risk of systemic cortico"
+  },
+  {
+    "question": "What should I be careful about with Etonogestrel?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Etonogestrel (Nexplanon) may affect the metabolism of certain other active substances, potentially altering their effectiveness or increasing the risk of side effects. This includes possible "
+  },
+  {
+    "question": "Are there any warnings for Sildenafil?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Sildenafil (Revatio) is contraindicated in patients with known hypersensitivity to sildenafil. It should be used with caution in patients with cardiovascular disease, including unstable angin"
+  },
+  {
+    "question": "What should I be careful about with Salbutamol?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: When using salbutamol, be cautious if you have asthma, as the use of beta-blocker medications together with salbutamol may increase the risk of severe bronchoconstriction. Always inform your "
+  },
+  {
+    "question": "What should I be careful about with Beklometasondipropionat + formoterol + glykopyrronium?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Be cautious when using Beklometasondipropionat + formoterol + glykopyrronium if you are also taking medications such as quinidine, disopyramide, procainamide, antihistamines, monoamine oxidas"
+  },
+  {
+    "question": "What interactions does Bikalutamid have?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Bicalutamide may interact with other medications, and dose adjustments may be required, especially if there are signs of increased effect or side effects. Always consult a healthcare professi"
+  },
+  {
+    "question": "What should I be careful about with Eplerenon?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Eplerenon may increase potassium levels in the blood, so regular monitoring of potassium and kidney function is recommended, especially in patients with kidney impairment or those taking othe"
+  },
+  {
+    "question": "What should I be careful about with Flekainid?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Be cautious with flecainide as it may cause side effects. If it is not possible to avoid certain conditions or concomitant medications, the patient should be closely monitored for adverse eff"
+  },
+  {
+    "question": "What should I be careful about with Latanoprost + netarsudil?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: When using Latanoprost + netarsudil, be careful to administer other eye drops with at least a five-minute interval between them (see section 4.2 of the SmPC). This helps ensure proper absorpt"
+  },
+  {
+    "question": "Are there any warnings for Melatonin?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION  \nMelatonin may interact with substances metabolized by the CYP1A2 enzyme, such as caffeine. Since caffeine is a CYP1A2 substrate, concurrent use with melatonin could potentially affect the me"
+  },
+  {
+    "question": "What should I be careful about with Metronidazol?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Metronidazole may cause side effects such as nausea, vomiting, metallic taste in the mouth, and headache. It can also lead to more serious effects like neurological symptoms (e.g., dizziness,"
+  },
+  {
+    "question": "Are there any warnings for Beklometasondipropionat + formoterol + glykopyrronium?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION  \nThere is a caution regarding the concurrent use of strong CYP3A inhibitors (e.g., ritonavir, cobicistat) with Beklometasondipropionat + formoterol + glykopyrronium, as the risk of systemic e"
+  },
+  {
+    "question": "What should I be careful about with Lynestrenol?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: It is not known to what extent this applies to gestagen methods. Monitor for any unexpected effects when using Lynestrenol, and consult a healthcare professional if you have concerns. This in"
+  },
+  {
+    "question": "What should I be careful about with Metformin?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: When taking Metformin, be careful about medications that can raise blood sugar levels, such as systemic or local glucocorticoids and sympathomimetics. Blood glucose levels may need to be moni"
+  },
+  {
+    "question": "What should I be careful about with Paracetamol + kodein?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Be cautious when using Paracetamol + Kodein together with substances that induce enzymes, as this may affect how the medication works. Always follow the instructions in the package leaflet or"
+  },
+  {
+    "question": "What should I be careful about with Empagliflozin + metformin?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: When taking Empagliflozin + metformin, be cautious if you are also using insulin or insulin secretagogues (such as sulfonylureas), as this combination can increase the risk of hypoglycemia (l"
+  },
+  {
+    "question": "Are there any warnings for Dupilumab?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION  \nDupilumab may affect the immune response to certain vaccines. After 12 weeks of dupilumab treatment, patients showed altered immune responses to both tetanus-diphtheria-pertussis vaccine (T-"
+  },
+  {
+    "question": "What should I be careful about with Flutikasonpropionat?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Flutikasonpropionat may interact with strong CYP3A4 inhibitors, such as ketoconazole, which can increase its blood levels by up to 150%. This could potentially increase the risk of systemic s"
+  },
+  {
+    "question": "What interactions does Vaccin mot TBE have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO: No interaction studies with other vaccines or medicinal products have been conducted for Vaccin mot TBE (FSME-IMMUN Junior). \n\nThis is not medical advice."
+  },
+  {
+    "question": "What interactions does Levokabastin have?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION  \nLevokabastin may have reduced absorption when used concurrently with the decongestant oxymetazolin, which is administered as a nasal spray. This interaction is temporary and may affect the e"
+  },
+  {
+    "question": "Are there any warnings for Paracetamol + kodein?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: The provided source indicates that standard doses of paracetamol in combination with codeine (Paracetamol + kodein) are not expected to have any effect, according to the FASS SmPC 4.5. This m"
+  },
+  {
+    "question": "What should I be careful about with Topiramat?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: When taking topiramate, be cautious of potential interactions with other medications, such as pioglitazone, which may affect the pharmacokinetics of topiramate. Always consult your healthcare"
+  },
+  {
+    "question": "What should I be careful about with Amitriptylin?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Amitriptylin may reduce the blood pressure-lowering effect of centrally acting antihypertensive medications such as guanethidine, betanidine, reserpine, clonidine, and methyldopa. Monitor blo"
+  },
+  {
+    "question": "What should I be careful about with Relugolix + estradiol + noretisteronacetat?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Relugolix, one component of Relugolix + estradiol + noretisteronacetat, is a weak CYP3A4 inducer. This means it may reduce the effectiveness of other medications that are metabolized by the C"
+  },
+  {
+    "question": "Are there any warnings for Fentanyl?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Fentanyl interactions with strong CYP3A4 inhibitors are expected to be greater than with weak or moderately strong CYP3A4 inhibitors. This may increase the risk of adverse effects such as res"
+  },
+  {
+    "question": "What interactions does Kalcium have?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION  \nCalcium absorption may be reduced by oxalates (found in spinach and rhubarb) and phytic acid (found in whole grains), as these substances can form insoluble compounds with calcium ions."
+  },
+  {
+    "question": "What interactions does Flekainid have?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION  \nFlekainid (Tambocor) has interactions related to electrolyte imbalances. Both hypokalemia (low potassium) and hyperkalemia (high potassium), as well as other electrolyte disturbances, should"
+  },
+  {
+    "question": "What should I be careful about with Pravastatin?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: If you need to take systemic fusidic acid, you should stop taking pravastatin for the entire duration of the fusidic acid treatment. This is due to an increased risk of muscle-related side ef"
+  },
+  {
+    "question": "Are there any warnings for Letrozol?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: There is limited clinical experience with Letrozol Accord when used in combination with estrogens or other anticancer drugs besides tamoxifen. The safety and efficacy of such combinations hav"
+  },
+  {
+    "question": "What interactions does Amitriptylin have?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION  \nAmitriptylin, a tricyclic antidepressant, is primarily metabolized in the liver by the cytochrome P450 enzymes CYP2D6 and CYP2C19, which are genetically polymorphic in the population. This m"
+  },
+  {
+    "question": "What interactions does Topiramat have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nTopiramate (Topiramat) may interact with other medications, and dose adjustments may be necessary. The available information indicates that dose titration should be performed to achieve clinica"
+  },
+  {
+    "question": "Are there any warnings for Beklometasondipropionat + formoterol + glykopyrronium?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Long-term simultaneous use of Trimbow (beklometasondipropionat + formoterol + glykopyrronium) and other anticholinergic medications has not been studied and is therefore not recommended (see "
+  },
+  {
+    "question": "What should I be careful about with Amitriptylin?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: When taking Amitriptylin, be cautious if also using sodium valproate or valpromide, as these medications may increase the concentration of Amitriptylin in the blood. This could potentially ra"
+  },
+  {
+    "question": "What should I be careful about with Fentanyl?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Fentanyl can cause serious respiratory depression, especially when used with medications that induce its metabolism. Inducers may reduce fentanyl's effects gradually and lead to increased pla"
+  },
+  {
+    "question": "What should I be careful about with Pravastatin?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nPravastatin may be used with warfarin, but long-term use of both medications did not lead to changes in warfarin's anticoagulant effect according to available data. However, as with any medicat"
+  },
+  {
+    "question": "What interactions does Topiramat have?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION  \nTopiramat may reduce the effect of warfarin, leading to decreased prothrombin time (PT) and international normalized ratio (INR). This interaction increases the risk of thromboembolic events"
+  },
+  {
+    "question": "What should I be careful about with Allergen, pollen från björk?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Det bör beaktas vid utsättning av sådana läkemedel.  \nDetta är inte medicinsk rådgivning."
+  },
+  {
+    "question": "What interactions does Dabigatranetexilat have?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION  \nDabigatranetexilat may interact with strong P-glycoprotein (P-gp) inhibitors, requiring careful clinical monitoring for signs of bleeding or anemia when co-administered, unless otherwise spe"
+  },
+  {
+    "question": "What should I be careful about with Tirzepatid?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: When taking Tirzepatid (Mounjaro), be aware that it may reduce the blood levels of norgestimat (a progestin used in hormonal contraceptives) by up to 66% in terms of maximum concentration (Cm"
+  },
+  {
+    "question": "What interactions does Sildenafil have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nSildenafil has been studied for interactions primarily in adult healthy men when taken orally. Specific interaction data may be limited to this group, and interactions with other medications or"
+  },
+  {
+    "question": "What should I be careful about with Empagliflozin + metformin?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Empagliflozin + metformin should be used with caution in patients with renal impairment, as both components are primarily excreted by the kidneys. Dose adjustments may be necessary. Additiona"
+  },
+  {
+    "question": "What interactions does Pioglitazon have?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Pioglitazon may require careful monitoring of blood glucose control, particularly when used with other antidiabetic agents or medications that affect glucose metabolism. No specific drug inte"
+  },
+  {
+    "question": "Are there any warnings for Paracetamol + kodein?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Enzyme-inducing medications such as rifampicin, barbiturates, several antiepileptics, and St. John's wort (Hypericum perforatum) may lead to reduced plasma concentrations of morphine (see als"
+  },
+  {
+    "question": "What should I be careful about with Beklometasondipropionat + formoterol + glykopyrronium?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Avoid non-cardioselective beta-blockers (including eye drops) when using Beklometasondipropionat + formoterol + glykopyrronium, as they may counteract the bronchodilatory effect of formoterol"
+  },
+  {
+    "question": "Are there any warnings for Metformin?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: The concurrent use of metformin and alcohol is not recommended. Alcohol intoxication is associated with an increased risk of lactic acidosis, particularly in cases of fasting, malnutrition, o"
+  },
+  {
+    "question": "Are there any warnings for Topiramat?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: The clinical significance of metformin's effect on topiramate's pharmacokinetics is unclear. No other specific warnings are mentioned in the provided source. Always consult a healthcare profe"
+  },
+  {
+    "question": "Are there any warnings for Letrozol?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Letrozol is metabolized partially by CYP2A6 and CYP3A4 enzymes. Therefore, concomitant use of strong inhibitors or inducers of these enzymes may affect letrozol levels. Use with caution when "
+  },
+  {
+    "question": "Are there any warnings for Pravastatin?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: There are warnings associated with pravastatin when used in combination with certain medications. If such a combination is necessary, careful clinical monitoring and monitoring of creatine ki"
+  },
+  {
+    "question": "What interactions does Amitriptylin have?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Amitriptylin should not be used together with certain medications due to an increased risk of serious side effects such as paralytic ileus and hyperpyrexia. Always consult a healthcare profes"
+  },
+  {
+    "question": "What interactions does Empagliflozin + metformin have?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION  \nEmpagliflozin + metformin may increase the risk of hypoglycemia when used with insulin or insulin secretagogues, such as sulfonylureas.  \n\nThis information is based on the FASS SmPC (Summary"
+  },
+  {
+    "question": "What should I be careful about with Flekainid?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: When using flecainide (Tambocor), be cautious about combining it with certain antihistamines such as mizolastine and terfenadine, as this may increase the risk of ventricular arrhythmia. Alwa"
+  },
+  {
+    "question": "What should I be careful about with Pravastatin?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: When taking pravastatin, be cautious about potential interactions with other medications. According to the FASS SmPC, interactions are not expected if the other medications are taken at least"
+  },
+  {
+    "question": "Are there any warnings for Topiramat?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION  \nWhen topiramate is added to pioglitazone treatment or pioglitazone is added to topiramate treatment, careful routine monitoring of patients should be performed regarding adequate control of "
+  },
+  {
+    "question": "What interactions does Pioglitazon have?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Pioglitazon may require careful monitoring of blood glucose control, especially when used with other medications that affect glucose metabolism. This is due to potential interactions that cou"
+  },
+  {
+    "question": "What interactions does Metformin have?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION  \nMetformin may interact with other medications, and dose adjustments may be necessary when used concomitantly with certain drugs, particularly during initiation or discontinuation of those me"
+  },
+  {
+    "question": "What should I be careful about with Paracetamol + kodein?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Paracetamol + kodein may interact with neuroleptic and antidepressant medications, which can inhibit the CYP2D6 enzyme. This interaction may require dose adjustment. Monitor for increased sid"
+  },
+  {
+    "question": "What interactions does Metronidazol have?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Metronidazol may cause disulfiram-like reactions when taken with alcohol, although this has only been reported in a small number of patients. Avoid alcohol during treatment and for at least 4"
+  },
+  {
+    "question": "Are there any warnings for Eplerenon?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Eplerenon may increase the risk of hyperkalemia (high potassium levels), especially when used with other potassium-sparing diuretics or other antihypertensive medications. This combination ca"
+  },
+  {
+    "question": "What should I be careful about with Solifenacin?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Be cautious when taking solifenacin with other medications that have anticholinergic effects, as this may increase both the therapeutic effect and the risk of side effects. Always inform your"
+  },
+  {
+    "question": "What should I be careful about with Amitriptylin?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Dose adjustment of amitriptyline may be necessary. Always follow the guidance in the product information (SmPC) and consult your doctor or pharmacist for proper management. This is not medica"
+  },
+  {
+    "question": "Are there any warnings for Amitriptylin?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION  \nAmitriptylin is a CYP2D6 inhibitor, and its metabolism can be affected by other drugs that inhibit the CYP2D6 enzyme. This includes certain antipsychotics, SSRIs, beta-blockers, and antiarrh"
+  },
+  {
+    "question": "What interactions does Bikalutamid have?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Bicalutamide may interact with medications that have a narrow therapeutic index, where an increase in effect could be significant. Always consult a healthcare professional before combining bi"
+  },
+  {
+    "question": "Are there any warnings for Valaciklovir?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Co-administration of cimetidine or probenecid with valaciclovir may increase aciclovir exposure (AUC) by approximately 65%. Monitor for potential increased risk of adverse effects. Consult a "
+  },
+  {
+    "question": "Are there any warnings for Bikalutamid?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION  \nThere is caution advised when prescribing Bicalutamide Bluefish with other medications that can inhibit drug oxidation, such as cimetidine and ketoconazole. These interactions may affect how"
+  },
+  {
+    "question": "What should I be careful about with Azelainsyra?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nNo interaction studies have been conducted with azelaic acid (Finacea). Therefore, there is no documented information on drug interactions. Always inform your healthcare provider about all medi"
+  },
+  {
+    "question": "What should I be careful about with Solifenacin?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: The effects of enzyme induction on the pharmacokinetics of solifenacin and its metabolites have not been studied, nor is the effect on solifenacin of CYP 3A4 substrates with higher affinity k"
+  },
+  {
+    "question": "What interactions does Amitriptylin have?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION  \nAmitriptylin may interact with drugs that induce cytochrome P450 enzymes, including oral contraceptives, rifampicin, phenytoin, barbiturates, carbamazepine, and St. John's wort (Hypericum pe"
+  },
+  {
+    "question": "Are there any warnings for Relugolix + estradiol + noretisteronacetat?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Relugolix may inhibit the breast cancer resistance protein (BCRP) in vitro, which could potentially affect the metabolism and levels of other drugs that are substrates of BCRP. This interacti"
+  },
+  {
+    "question": "What should I be careful about with Topiramat?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nTopiramate may interact with other medications, and its pharmacokinetics can be affected by certain drugs. For example, the interaction with hydrochlorothiazide (HCTZ) was not significantly alt"
+  },
+  {
+    "question": "Are there any warnings for Topiramat?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION  \nTopiramate (Topiramat) has several warnings associated with its use. It may cause serious side effects including metabolic acidosis, cognitive impairment, psychiatric symptoms (such as depre"
+  },
+  {
+    "question": "Are there any warnings for Melatonin?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: There may be interactions between melatonin and other active substances that affect CYP1A enzymes. Always consult a healthcare professional before combining melatonin with other medications. "
+  },
+  {
+    "question": "Are there any warnings for Mometasonfuroat?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: There may be clinical relevance for interactions involving mometasone furoate, particularly when used with CYP3A inhibitors. The extent of this interaction depends on the dose of the corticos"
+  },
+  {
+    "question": "Are there any warnings for Tirzepatid?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO\n\nThe provided FASS source does not list any specific warnings for Tirzepatid (Mounjaro). The only information given is that the total exposure (AUC) was not affected, which relates to pharmacokin"
+  },
+  {
+    "question": "What interactions does Metformin have?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Metformin may interact with alcohol, and consumption of alcohol or medications containing alcohol should be avoided. This is due to an increased risk of lactic acidosis. Always consult a heal"
+  },
+  {
+    "question": "Are there any warnings for Pravastatin?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: There is a warning regarding the concurrent use of pravastatin and rifampicin, as appropriate caution is advised due to potential interactions."
+  },
+  {
+    "question": "Are there any warnings for Tirzepatid?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: There is a risk of delayed effect for oral medications where rapid onset of action is important. This should be taken into account when using Tirzepatid. Always consult a healthcare professio"
+  },
+  {
+    "question": "What interactions does Topiramat have?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION  \nTopiramat may affect the concentration of other medications. According to the FASS SmPC 4.5, when topiramat is added to a treatment regimen, it can alter the plasma concentration of co-admin"
+  },
+  {
+    "question": "Are there any warnings for Dabigatranetexilat?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Dabigatranetexilat may interact with drugs that inhibit P-glycoprotein (P-gp), such as posaconazole, which has been shown to inhibit P-gp to some extent. Although clinical studies with posaco"
+  },
+  {
+    "question": "Are there any warnings for Topiramat?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Topiramate may cause accumulation during the time steady-state is reached, which could increase the risk of adverse effects. Monitor for side effects, especially during the initial phase of t"
+  },
+  {
+    "question": "Are there any warnings for Dabigatranetexilat?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO\n\nThe provided source does not contain any specific warnings for dabigatranetexilat. It only mentions that other dabigatran-related coagulation tests were not significantly altered by pretreatment"
+  },
+  {
+    "question": "What should I be careful about with Paracetamol + kodein?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: When using Paracetamol + Kodein, be cautious if also receiving chloramphenicol injection, as plasma levels of chloramphenicol should be monitored during combination therapy. This is due to po"
+  },
+  {
+    "question": "What should I be careful about with Empagliflozin + metformin?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: When taking Empagliflozin + metformin, be cautious when using NSAIDs (including selective COX II inhibitors), ACE inhibitors, angiotensin II receptor antagonists, and diuretics—especially loo"
+  },
+  {
+    "question": "What interactions does Eplerenon have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nEplerenon may interact with other medications, particularly those that affect potassium levels or renal function. The most commonly reported interactions include increased potassium levels (hyp"
+  },
+  {
+    "question": "What should I be careful about with Flutikasonpropionat?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Be cautious when using fluticasone propionate with other medications, as a significant increase in plasma levels of fluticasone propionate is expected, even though specific interaction inform"
+  },
+  {
+    "question": "What should I be careful about with Topiramat?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: When taking Topiramate, be cautious of potential changes in drug levels (Cmax or AUC) due to interactions with other medications. Always consult your doctor or pharmacist before combining Top"
+  },
+  {
+    "question": "What should I be careful about with Latanoprost + netarsudil?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Do not use Latanoprost + netarsudil together with other prostaglandins, prostaglandin analogs, or prostaglandin derivatives, as this is not recommended. Using multiple such medications may in"
+  },
+  {
+    "question": "What interactions does Mometasonfuroat have?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Interaction studies with mometasone furoate have only been conducted in adults. The safety and interactions in pediatric populations have not been established. Always consult a healthcare pro"
+  },
+  {
+    "question": "Are there any warnings for Topiramat?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: When topiramate is added to glibenclamide treatment or glibenclamide is added to topiramate treatment, careful routine monitoring of patients is required regarding adequate control of their d"
+  },
+  {
+    "question": "What should I be careful about with Lynestrenol?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO: No specific interaction studies have been conducted with Exlutena (lynestrenol). Always consult a healthcare professional before starting, stopping, or changing any medication. This is not medic"
+  },
+  {
+    "question": "Are there any warnings for Dupilumab?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO: The provided source indicates that the immune response to tetanus and meningococcal polysaccharide vaccines was similar in patients receiving dupilumab compared to those receiving placebo. No sp"
+  },
+  {
+    "question": "What interactions does Relugolix + estradiol + noretisteronacetat have?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: The simultaneous use of liver enzyme inducers and Relugolix + estradiol + noretisteronacetat is not recommended for any prolonged period. This is due to potential interactions that may reduce"
+  },
+  {
+    "question": "Are there any warnings for Topiramat?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: When topiramate is administered together with risperidone, there is a decrease in risperidone's systemic exposure (16% and 33% reduction in AUC at steady-state for doses of 250 mg/day and 400"
+  },
+  {
+    "question": "What should I be careful about with Allergen, pollen från björk?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: När du får behandling med allergen, pollen från björk (Alutard SQ Björk) bör du vara försiktig med samtidig användning av symtomlindrande läkemedel mot allergi, t.ex. antihistaminer, kortikos"
+  },
+  {
+    "question": "Are there any warnings for Empagliflozin + metformin?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Empagliflozin is a substrate for P-glycoprotein (P-gp) and breast cancer resistance protein (BCRP). Therefore, co-administration with inhibitors or inducers of these transporters may affect e"
+  },
+  {
+    "question": "Are there any warnings for Flekainid?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Flekainid (Tambocor) may increase the risk of proarrhythmic effects, particularly in patients with structural heart disease or impaired left ventricular function. It should be used with cauti"
+  },
+  {
+    "question": "What should I be careful about with Beklometasondipropionat + formoterol + glykopyrronium?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Be careful with Beklometasondipropionat + formoterol + glykopyrronium if you are taking L-dopa, L-thyroxine, oxytocin, or alcohol, as these substances may worsen heart tolerance to beta2-symp"
+  },
+  {
+    "question": "What interactions does Tirzepatid have?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Tirzepatid may affect the oral absorption of paracetamol in a dose- and time-dependent manner. This could potentially alter paracetamol's effectiveness or onset of action. Monitor for reduced"
+  },
+  {
+    "question": "What interactions does Fentanyl have?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION  \nFentanyl should not be given within 14 days after completion of treatment with monoamine oxidase inhibitors (MAO inhibitors), due to the risk of serious adverse reactions.  \n\nThis informatio"
+  },
+  {
+    "question": "What should I be careful about with Topiramat?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: When taking Topiramat, be cautious if you are also using phenytoin, as Topiramat may increase the risk of phenytoin toxicity. Monitor phenytoin levels closely if you are on both medications, "
+  },
+  {
+    "question": "What interactions does Sevelamer have?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION  \nSevelamer may interact with levotyroxine. Very rare cases of hypothyroidism have been reported in patients taking both sevelamer hydrochloride (which contains the same active ingredient as s"
+  },
+  {
+    "question": "Are there any warnings for Valaciklovir?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION  \nWhen valaciclovir is used together with nephrotoxic drugs, caution should be exercised, especially in patients with reduced kidney function. This is based on the potential increased risk of "
+  },
+  {
+    "question": "What should I be careful about with Amitriptylin?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Amitriptylin is metabolized by the liver enzymes CYP3A4 and CYP1A2 to a lesser extent. This means that medications or substances that affect these enzymes (such as inhibitors or inducers) may"
+  },
+  {
+    "question": "Are there any warnings for Metronidazol?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Patients should be advised to avoid alcohol during metronidazole treatment and for at least 24 hours after treatment, as a disulfiram-like reaction may occur."
+  },
+  {
+    "question": "What interactions does Etonogestrel have?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO: Etonogestrel may have interactions, but changes typically remain within normal ranges. For specific concerns, consult a healthcare professional. This is not medical advice."
+  },
+  {
+    "question": "What should I be careful about with Moxonidin?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: When taking moxonidin, be careful about combining it with benzodiazepines, as this can increase the sedative effects of benzodiazepines. This may lead to excessive drowsiness or impaired aler"
+  },
+  {
+    "question": "What should I be careful about with Empagliflozin + metformin?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Be cautious when using Empagliflozin + metformin with other medications that may impair kidney function, as this can increase the risk of lactic acidosis. Monitor kidney function regularly, e"
+  },
+  {
+    "question": "What should I be careful about with Prednisolon?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Prednisolone's metabolism is affected to a lesser extent by CYP3A4 inhibitors compared to methylprednisolone. However, caution is still advised when combining prednisolone with strong CYP3A4 "
+  },
+  {
+    "question": "What should I be careful about with Metronidazol?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Metronidazole may increase lithium levels in the blood, which could lead to lithium toxicity. If you are taking lithium, your healthcare provider should monitor your lithium levels closely du"
+  },
+  {
+    "question": "What should I be careful about with Salbutamol?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Salbutamol may have its effects intensified when used together with other medications, especially xanthine derivatives, glucocorticoids, and diuretics. Monitor for increased side effects such"
+  },
+  {
+    "question": "What should I be careful about with Eplerenon?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Be cautious of postural hypotension when taking eplerenone with alpha-1-blockers. Clinical monitoring is recommended during combined treatment. This is not medical advice."
+  },
+  {
+    "question": "What should I be careful about with Relugolix + estradiol + noretisteronacetat?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Relugolix + estradiol + noretisteronacetat contains estrogen and progestin, which may affect the breakdown of certain other medicinal substances. Be cautious when using this medication with o"
+  },
+  {
+    "question": "Are there any warnings for Allergen, pollen från björk?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nInga kända läkemedelsinteraktioner har identifierats för Allergen, pollen från björk. Det finns inga humana interaktionsstudier genomförda.  \nDetta är inte medicinsk rådgivning."
+  },
+  {
+    "question": "Are there any warnings for Melatonin?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: CYP1A2 inducers may reduce the plasma concentration of melatonin. This could potentially decrease its effectiveness. Monitor response if used concomitantly with CYP1A2 inducers. Consult a hea"
+  },
+  {
+    "question": "Are there any warnings for Amitriptylin?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION  \nAmitriptylin requires caution when used together with diuretics that cause hypokalemia (e.g., furosemide), as this combination may increase the risk of adverse effects.  \n\nThis is not medica"
+  },
+  {
+    "question": "What should I be careful about with Fentanyl?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Close monitoring should be maintained until stable effects of the medication are achieved."
+  },
+  {
+    "question": "Are there any warnings for Dabigatranetexilat?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: There is a noted carry-over effect when dabigatran etexilate is used with enoxaparin, but it is considered not clinically relevant according to the FASS SmPC 4.5. Always consult a healthcare "
+  },
+  {
+    "question": "Are there any warnings for Bikalutamid?",
+    "gold": "INFO",
+    "pred": "INFO",
+    "answer": "INFO  \nNo specific warnings regarding pharmacodynamic or pharmacokinetic interactions between bicalutamide and LHRH analogues have been identified according to the FASS SmPC. However, this does not im"
+  },
+  {
+    "question": "What interactions does Relugolix + estradiol + noretisteronacetat have?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Relugolix + estradiol + noretisteronacetat (Ryeqo) has a known interaction with P-glycoprotein (P-gp) inhibitors. Concomitant use of P-gp inhibitors should be avoided within 6 hours before or"
+  },
+  {
+    "question": "Are there any warnings for Dabigatranetexilat?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Rifampicin, when used at a dose of 600 mg once daily for seven days, significantly reduces the maximum plasma concentration and total exposure of dabigatran by 65.5% and 67%, respectively. Th"
+  },
+  {
+    "question": "What interactions does Metronidazol have?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: Metronidazole may reduce plasma levels of active steroids. This interaction could potentially affect the efficacy of steroid treatments. Monitor patients closely if used concomitantly, and co"
+  },
+  {
+    "question": "Are there any warnings for Solifenacin?",
+    "gold": "INFO",
+    "pred": "CAUTION",
+    "answer": "CAUTION: The therapeutic effect of solifenacin may be reduced when taken together with cholinergic receptor agonists. Always consult a healthcare professional before combining medications. This is not"
+  }
+]

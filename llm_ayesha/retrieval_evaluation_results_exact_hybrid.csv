@@ -1,0 +1,21 @@
+﻿drug_a,drug_b,atc_a,atc_b,found,rank,source
+Karvedilol,paroxetin,C07AG02,N06AB05,True,1,exact_structured_pair
+sulfasalazin,Digoxin,A07EC01,C01AA05,True,1,exact_structured_pair
+ketokonazol,Buprenorfin,D01AC08,N02AE01,True,1,exact_structured_pair
+Sulfasalazin,metenamin,A07EC01,J01XX05,True,1,exact_structured_pair
+Venlafaxin,metadon,N06AX16,N07BC02,True,1,exact_structured_pair
+Rimegepant,modafinil,N02CD06,N06BA07,True,1,exact_structured_pair
+glimepirid,Empagliflozin,A10BB12,A10BK03,True,1,exact_structured_pair
+Haloperidol,litium,N05AD01,N05AN01,True,1,exact_structured_pair
+erytromycin,Itrakonazol,J01FA01,J02AC02,True,1,exact_structured_pair
+Rosuvastatin,flukonazol,C10AA07,J02AC01,True,1,exact_structured_pair
+edoxaban,Karbamazepin,B01AF03,N03AF01,True,1,exact_structured_pair
+Kandesartancilexetil + hydroklortiazid,trimetoprim,C09DA06,J01EA01,True,1,exact_structured_pair
+amiodaron,Leuprorelin,C01BD01,L02AE02,True,1,exact_structured_pair
+Järn,ciprofloxacin,B03AA07,S01AE03,True,1,exact_structured_pair
+kolestyramin,Valproinsyra,C10AC01,N03AG01,True,1,exact_structured_pair
+acetylsalicylsyra,Sertralin,B01AC06,N06AB06,True,1,exact_structured_pair
+Kandesartancilexetil + hydroklortiazid,erytromycin,C09DA06,J01FA01,True,1,exact_structured_pair
+brimonidin,Brinzolamid + brimonidin,S01EA05,S01EC54,True,1,exact_structured_pair
+digoxin,Bendroflumetiazid,C01AA05,C03AA01,True,1,exact_structured_pair
+Etonogestrel,itrakonazol,G03AC08,J02AC02,True,1,exact_structured_pair
