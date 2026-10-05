@@ -53,10 +53,12 @@ from security import flag_injection_attempt, log_suspicious, wrap_untrusted
 # full bf16 (~61GB) -- no 4-bit quantization needed for inference, which is
 # both faster (no bnb dequant overhead) and more accurate than 4-bit.
 DEFAULT_MODEL_ID = "Qwen/Qwen3-30B-A3B-Instruct-2507"
+# DEFAULT_MODEL_ID = "Qwen/Qwen3-14B"
 
 # Preference order when more than one adapter folder exists. First match wins.
 # Add/remove/reorder entries as you produce more adapters.
-ADAPTER_CANDIDATES = ["adapter", "adapter_l4"]
+# ADAPTER_CANDIDATES = ["/teamspace/studios/this_studio/LLMSCAI_G_19/adapter_l4"]
+ADAPTER_CANDIDATES = ["/teamspace/studios/this_studio/LLMSCAI_G_19/adapter"]
 
 
 def _resolve_model_and_adapter():
@@ -112,6 +114,17 @@ DOSE_RESPONSE = (
     "liver function and other medications. Please check the package leaflet or ask "
     "a pharmacist or doctor."
 )
+YES_WORDS = {"yes", "y", "yeah", "yep", "yup", "correct", "right", "ok", "okay", "sure",
+             "ja", "jo", "japp", "jajamen", "stämmer", "korrekt", "rätt", "det stämmer",
+             "yes correct", "yes that is correct", "ja det stämmer"}
+NO_WORDS = {"no", "n", "nope", "nah", "wrong", "incorrect", "nej", "nä", "fel", "inte rätt"}
+
+
+def _norm_reply(text: str) -> str:
+    """Lowercase, drop punctuation, collapse whitespace -- for yes/no detection."""
+    return re.sub(r"\s+", " ", re.sub(r"[^\w\s]", "", (text or "").lower())).strip()
+
+
 DISCLAIMER = "\n\nThis is not medical advice. Please confirm with a pharmacist or doctor."
 
 # ----------------------------------------------------------------- OCR extraction step
@@ -172,10 +185,34 @@ _tok = None
 _model = None
 
 
+def _check_gpu():
+    """Fails loudly instead of silently falling back to CPU. A 30B model on
+    CPU will 'work' in the sense that it doesn't crash -- it'll just load for
+    a very long time and generate at a speed that looks indistinguishable
+    from hanging, with 0% GPU utilization the whole time. Better to stop here
+    with a clear message than let that happen silently."""
+    if not torch.cuda.is_available():
+        raise RuntimeError(
+            "No GPU visible to PyTorch (torch.cuda.is_available() is False). "
+            "Loading this model on CPU would be extremely slow and is almost "
+            "certainly not what you want. If you're on Lightning AI Studios, "
+            "check that the Studio's machine type is actually set to a GPU "
+            "instance (not CPU) in the Studio settings, and that it's running, "
+            "then restart this session. Run `nvidia-smi` to confirm the GPU is "
+            "visible at the OS level before re-running this script."
+        )
+    n = torch.cuda.device_count()
+    name = torch.cuda.get_device_name(0)
+    free, total = torch.cuda.mem_get_info(0)
+    print(f"[chatbot.py] GPU check OK: {n} device(s), using {name}, "
+         f"{free/1e9:.1f}GB free / {total/1e9:.1f}GB total")
+
+
 def _load_model():
     global _tok, _model
     if _model is not None:
         return
+    _check_gpu()
     print(f"Loading {MODEL_ID} (bf16)" + (f" + adapter {ADAPTER_PATH}" if ADAPTER_PATH else ""))
     _tok = AutoTokenizer.from_pretrained(MODEL_ID)
     # Full bf16, no quantization -- the 96GB card has room, and this is both
@@ -291,52 +328,90 @@ def answer(text: str, image_bytes: bytes = None, state: dict = None) -> dict:
     matched = flag_injection_attempt(text)
     log_suspicious("user_prompt", text, matched)
 
-    # 2. Collect candidate drugs: OCR (if image) + typed text + anything carried from state
-    pieces = [text]
-    if image_bytes:
-        from ocr import extract_text, extract_text_auto_rotate, full_text
-        ocr_fn = extract_text_auto_rotate if OCR_AUTO_ROTATE else extract_text
-        try:
-            ocr_results = ocr_fn(image_bytes, variant=OCR_VARIANT, min_conf=OCR_MIN_CONF)
-        except Exception as e:
-            # A corrupt/unreadable image shouldn't crash the whole request --
-            # fall back to typed text only and tell the user what happened.
-            log_suspicious("ocr_error", str(e), [])
-            ocr_results = []
-        raw_ocr_text = full_text(ocr_results)
-        if not raw_ocr_text.strip() and not text.strip():
-            # No typed text AND nothing readable in the image -- nothing to work with.
-            return {"status": "no_drug",
-                    "answer": "I couldn't read any text from that image. Could you try a "
-                              "clearer photo, or type the medication name?",
-                    "drugs": [], "severity": None, "citations": [], "state": state}
-        # Narrow extraction call: pulls only plausible drug-name fragments out
-        # of the noisy OCR blob before anything touches the matcher or the
-        # answering model. See _extract_candidates_from_ocr() for why this
-        # containment matters more than the prompt wording alone.
-        if raw_ocr_text.strip():
-            pieces.extend(_extract_candidates_from_ocr(raw_ocr_text))
+    # 2. Identify drugs. Confirmation replies ("yes"/"no") are handled FIRST and
+    # never sent through match_drugs(), otherwise "yes" gets fuzzy-matched against
+    # the drug list and the confirmation question just repeats forever.
+    pending = bool(state.get("pending"))
+    reply = _norm_reply(text)
+    question = text                    # the question we will actually answer
+    confirmed = False
 
-    candidates = match_drugs(pieces)
-    known = state.get("drugs", [])
-    # merge: new candidates + anything already confirmed this session, de-duplicated by atc
-    by_atc = {d["atc"]: d for d in known}
-    for c in candidates:
-        by_atc[c["atc"]] = c
-    drugs = list(by_atc.values())
-
-    if not drugs:
+    if pending and reply in YES_WORDS:
+        # User confirmed the drugs we asked about: reuse them and answer the
+        # ORIGINAL question (saved when we asked), not the word "yes".
+        drugs = [dict(d, confident=True) for d in state.get("drugs", [])]
+        question = state.get("pending_question") or ""
+        confirmed = True
+    elif pending and reply in NO_WORDS:
+        # Wrong guess: throw away the unconfirmed drugs, keep the saved question.
+        kept = [dict(d, _confirmed=True) for d in state.get("drugs", []) if d.get("confident")]
+        state["drugs"] = kept
         return {"status": "no_drug",
-                "answer": "I couldn't identify a medication. Could you type its name?",
-                "drugs": [], "severity": None, "citations": [], "state": state}
+                "answer": "Sorry about that. Please type the exact medication name.",
+                "drugs": [], "severity": None, "citations": [],
+                "state": {**state, "pending": True}}
 
-    if any(not d["confident"] for d in drugs):
-        return {"status": "needs_confirmation", "drugs": drugs,
-                "answer": "I found: " + ", ".join(d["name"] for d in drugs) +
-                          ". Is that correct? (yes / tell me the right name)",
-                "severity": None, "citations": [], "state": {**state, "drugs": drugs}}
+    if not confirmed:
+        pieces = [text]
+        if image_bytes:
+            ocr_results = []
+            try:
+                from ocr import extract_text, extract_text_auto_rotate, full_text
+                ocr_fn = extract_text_auto_rotate if OCR_AUTO_ROTATE else extract_text
+                ocr_results = ocr_fn(image_bytes, variant=OCR_VARIANT, min_conf=OCR_MIN_CONF)
+            except Exception as e:
+                # Missing OCR deps or an unreadable image must not crash the
+                # request -- log it loudly and fall back to the typed text.
+                print(f"[chatbot.py] OCR FAILED: {type(e).__name__}: {e}")
+                log_suspicious("ocr_error", str(e), [])
+            raw_ocr_text = " ".join(r["text"] for r in ocr_results)
+            print(f"[chatbot.py] OCR read {len(ocr_results)} boxes: {raw_ocr_text[:200]!r}")
+            if not raw_ocr_text.strip() and not text.strip():
+                return {"status": "no_drug",
+                        "answer": "I couldn't read any text from that image. Could you try a "
+                                  "clearer photo, or type the medication name?",
+                        "drugs": [], "severity": None, "citations": [], "state": state}
+            # Narrow extraction call: only plausible drug-name fragments reach the matcher.
+            if raw_ocr_text.strip():
+                pieces.extend(_extract_candidates_from_ocr(raw_ocr_text))
 
+        candidates = match_drugs(pieces)
+
+        # Keep only drugs the user already confirmed in earlier turns. Unconfirmed
+        # guesses from a previous turn must not leak into this one.
+        known = [d for d in state.get("drugs", []) if d.get("_confirmed")]
+        by_atc = {d["atc"]: d for d in known}
+        for c in candidates:
+            if c["atc"] not in by_atc:       # never downgrade an already-confirmed drug
+                by_atc[c["atc"]] = c
+        drugs = list(by_atc.values())
+
+        # Remember the real question across the confirmation round-trip. A short
+        # reply (just a drug name) must not overwrite it.
+        if pending and len(text.split()) < 4 and state.get("pending_question"):
+            question = state["pending_question"]
+
+        if not drugs:
+            return {"status": "no_drug",
+                    "answer": "I couldn't identify a medication. Could you type its name?",
+                    "drugs": [], "severity": None, "citations": [],
+                    "state": {**state, "drugs": [], "pending": pending,
+                              "pending_question": state.get("pending_question") if pending else None}}
+
+        if any(not d["confident"] for d in drugs):
+            return {"status": "needs_confirmation", "drugs": drugs,
+                    "answer": "I found: " + ", ".join(d["name"] for d in drugs) +
+                              ". Is that correct? (yes / tell me the right name)",
+                    "severity": None, "citations": [],
+                    "state": {**state, "drugs": drugs, "pending": True,
+                              "pending_question": question}}
+
+    # Everything below this point works with confirmed drugs only.
+    for d in drugs:
+        d["_confirmed"] = True
     state["drugs"] = drugs
+    state["pending"] = False
+    state.pop("pending_question", None)
 
     # 3. Need at least 2 drugs for an interaction check; 1 drug = general info question
     if len(drugs) == 1:
@@ -351,13 +426,13 @@ def answer(text: str, image_bytes: bytes = None, state: dict = None) -> dict:
 
     # 4. Cache check
     drug_names = [d["name"] for d in drugs]
-    cached = _cache_get(drug_names, text)
+    cached = _cache_get(drug_names, question)
     if cached:
         cached["state"] = state
         return cached
 
     # 5. Generate
-    gen_text = _generate(text or "Check interactions.", chunks)
+    gen_text = _generate(question or "Check interactions.", chunks)
     label_match = re.match(r"^\s*(DANGEROUS|AVOID|CAUTION|INFO)", gen_text.upper())
     severity = label_match.group(1) if label_match else None
 
@@ -378,7 +453,7 @@ def answer(text: str, image_bytes: bytes = None, state: dict = None) -> dict:
         "citations": [c["source"] for c in chunks],
         "state": state,
     }
-    _cache_set(drug_names, text, {k: v for k, v in result.items() if k != "state"})
+    _cache_set(drug_names, question, {k: v for k, v in result.items() if k != "state"})
     return result
 
 
