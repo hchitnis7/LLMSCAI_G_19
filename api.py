@@ -14,7 +14,7 @@ import base64
 from typing import Optional
 
 import uvicorn
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 
 from chatbot import answer
@@ -47,8 +47,34 @@ def health():
 
 @app.post("/answer", response_model=AnswerResponse)
 def answer_endpoint(req: AnswerRequest):
-    image_bytes = base64.b64decode(req.image_b64) if req.image_b64 else None
-    result = answer(text=req.text, image_bytes=image_bytes, state=req.state)
+    image_bytes = None
+
+    if req.image_b64:
+        image_data = "".join(req.image_b64.split())  # drop spaces/newlines
+
+        # Handle browser-style data URLs:
+        # data:image/png;base64,iVBORw0KGgo...
+        if image_data.startswith("data:") and "," in image_data:
+            image_data = image_data.split(",", 1)[1]
+
+        try:
+            image_bytes = base64.b64decode(
+                image_data,
+                validate=True,
+            )
+        except Exception as exc:
+            raise HTTPException(
+                status_code=400,
+                detail=f"Invalid image Base64 data: {exc}",
+            )
+
+    print(f"[api.py] /answer text={req.text!r} image_bytes={len(image_bytes) if image_bytes else 0}")
+    result = answer(
+        text=req.text,
+        image_bytes=image_bytes,
+        state=req.state,
+    )
+
     return result
 
 
