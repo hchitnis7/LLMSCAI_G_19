@@ -1,1 +1,5 @@
 /teamspace/studios/this_studio/LLMSCAI_G_19/test images__pycache__/
+
+# Python cache
+__pycache__/
+*.py[cod]
