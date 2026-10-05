@@ -29,6 +29,7 @@ import pandas as pd
 
 random.seed(42)
 
+DATA_DIR = Path("llm_ayesha") if Path("llm_ayesha").exists() else Path("LLMSCAI_G_19/llm_ayesha")
 OUT_DIR = Path("sft_data")
 OUT_DIR.mkdir(exist_ok=True)
 
@@ -37,13 +38,59 @@ OUT_DIR.mkdir(exist_ok=True)
 # and keeps training time reasonable on an L4 in a short window.
 N_FALLBACK_SAMPLES = 2000
 
-SEVERITY_TEXT = {
-    "DANGEROUS": "DANGEROUS. FASS marks this combination as contraindicated or carrying a serious, well-documented risk.",
-    "AVOID": "AVOID. FASS advises against this combination or recommends it not be used.",
-    "CAUTION": "CAUTION. FASS notes this combination requires monitoring, dose adjustment, or care.",
-    "INFO": "INFO. FASS mentions these drugs together, but the available text does not state a clear severity. This is NOT a safety confirmation -- it only means no strong warning keyword was found.",
-    "UNCLASSIFIED": "INFO. This statement comes from FASS but has not been matched to a specific second drug or classified by severity. This is NOT a safety confirmation.",
+# Conversational openers. Each MUST start with the exact severity word (the app and
+# the system prompt rely on it). INFO/UNCLASSIFIED must never imply "safe".
+OPENERS = {
+    "DANGEROUS": [
+        "DANGEROUS. Please don't combine {a} and {b} without checking with a doctor or pharmacist first -- FASS marks this pairing as contraindicated or seriously risky.",
+        "DANGEROUS. This is one to take seriously: FASS flags {a} together with {b} as a serious risk, so please talk to a doctor or pharmacist before taking them together.",
+    ],
+    "AVOID": [
+        "AVOID. FASS advises against taking {a} and {b} together, so it's best to check with a pharmacist or doctor before you do.",
+        "AVOID. Good that you checked -- FASS recommends not using {a} with {b}, so please get a pharmacist's or doctor's view first.",
+    ],
+    "CAUTION": [
+        "CAUTION. {a} and {b} can be taken together in some situations, but FASS says they need care, such as monitoring or an adjusted plan.",
+        "CAUTION. There's an interaction to be aware of between {a} and {b}: FASS notes it calls for some care.",
+    ],
+    "INFO": [
+        "INFO. FASS does mention {a} and {b} together, but it doesn't spell out how serious it is -- and that does not mean the combination is safe.",
+        "INFO. I found a note about {a} and {b} in FASS, but no clear severity. Please don't read that as a green light.",
+    ],
+    "UNCLASSIFIED": [
+        "INFO. I found a statement about {a} in FASS, but it isn't tied to a specific second medicine or rated by severity. That is not a safety confirmation.",
+    ],
 }
+CLOSERS = [
+    "Want me to check another medicine you're taking?",
+    "If you tell me what else you take, I can check that too.",
+    "A pharmacist can look at your whole medicine list to be sure -- it only takes a minute.",
+]
+
+
+def interaction_text(chunk_text, max_chars=320):
+    """Pull the actual interaction sentence out of a chunk (the old code took the
+    LAST line, which is just 'Source: FASS SmPC 4.5', so answers carried no content)."""
+    text = ""
+    for line in str(chunk_text).splitlines():
+        for key in ("Interaction:", "Interaction statement:"):
+            if line.startswith(key):
+                text = line[len(key):].strip()
+    if len(text) > max_chars:
+        cut = text[:max_chars]
+        end = max(cut.rfind(". "), cut.rfind("; "))
+        text = (cut[:end + 1] if end > 120 else cut.rsplit(" ", 1)[0]) + " ..."
+    return text
+
+
+def friendly_answer(sev, a, b, chunk_text):
+    opener = random.choice(OPENERS[sev]).format(a=a, b=b)
+    quote = interaction_text(chunk_text)
+    body = f'\n\nHere is what FASS says (the source text is in Swedish): "{quote}"' if quote else ""
+    return f"{opener}{body}\n\n{random.choice(CLOSERS)}"
+
+
+SEVERITY_TEXT = {k: True for k in OPENERS}   # valid severities
 
 QUESTION_TEMPLATES_PAIR = [
     "Can I take {a} together with {b}?",
@@ -68,12 +115,7 @@ def build_pair_examples(df):
         if not a or not b or not chunk_text or sev not in SEVERITY_TEXT:
             continue
         q = random.choice(QUESTION_TEMPLATES_PAIR).format(a=a, b=b)
-        sev_line = SEVERITY_TEXT[sev]
-        answer = (
-            f"{sev_line}\n\n"
-            f"According to FASS: {chunk_text.splitlines()[-1] if chr(10) in chunk_text else chunk_text}\n\n"
-            f"This is not medical advice -- please confirm with a pharmacist or doctor before combining these medications."
-        )
+        answer = friendly_answer(sev, a, b, chunk_text)
         examples.append({
             "pair_key": r.get("pair_key", f"{a}|{b}"),
             "question": q,
@@ -94,11 +136,9 @@ def build_fallback_examples(df):
         if not a or not chunk_text:
             continue
         q = random.choice(QUESTION_TEMPLATES_SINGLE).format(a=a)
-        answer = (
-            f"{SEVERITY_TEXT['INFO']}\n\n"
-            f"According to FASS: {chunk_text.splitlines()[-1] if chr(10) in chunk_text else chunk_text}\n\n"
-            f"This is not medical advice -- please confirm with a pharmacist or doctor."
-        )
+        if not interaction_text(chunk_text):
+            continue
+        answer = friendly_answer("UNCLASSIFIED", a, "", chunk_text)
         examples.append({
             "pair_key": f"single|{a}",
             "question": q,
@@ -113,6 +153,14 @@ def build_fallback_examples(df):
 # by construction. These MUST be written by hand. Keep the count small but
 # make sure every category is represented at least a few times.
 HANDWRITTEN = [
+    {"pair_key": "scope|usage", "question": "What is Alvedon used for?", "chunks": [],
+     "answer": "Insufficient data. My FASS data only covers how medicines interact with each other, so I can't tell you what Alvedon is used for. The package leaflet or a pharmacist can, and I'm happy to check how it interacts with anything else you take."},
+    {"pair_key": "scope|usage", "question": "what is this usually used for", "chunks": [{"source": "FASS: Alvedon", "text": "Drug: Paracetamol (ATC: N02BE01)\nInteraction statement: Samtidig behandling med enzyminducerande medel kan oka risken for levertoxicitet.\nSource: FASS SmPC 4.5"}],
+     "answer": "Insufficient data. I can only look up interaction information, so I can't say what this medicine is used for -- the package leaflet or a pharmacist can. What I can tell you is that FASS notes paracetamol's liver risk may go up alongside medicines that speed up the liver's enzymes. Want me to check it against something you take?"},
+    {"pair_key": "scope|usage", "question": "Vad anvands Ipren mot?", "chunks": [],
+     "answer": "Insufficient data. Mina FASS-uppgifter handlar bara om hur lakemedel interagerar, sa jag kan tyvarr inte svara pa vad Ipren anvands mot. Bipacksedeln eller ett apotek kan hjalpa dig, och jag kollar garna om Ipren kan kombineras med andra lakemedel du tar."},
+    {"pair_key": "scope|usage", "question": "What are the side effects of Waran?", "chunks": [],
+     "answer": "Insufficient data. I can only look up how medicines interact, so I can't list Waran's side effects. The leaflet or a pharmacist can go through them with you -- and I can check Waran against other medicines if you like."},
     {"pair_key": "refusal|dose", "question": "What dose of paracetamol should I take?",
      "chunks": [],
      "answer": "I can't recommend a specific dose. Dosing depends on your weight, age, kidney/liver function and other medications. Please check the package leaflet or ask a pharmacist or doctor."},
@@ -162,8 +210,8 @@ def write_jsonl(path, examples):
 
 
 def main():
-    pair_df = pd.read_csv("LLMSCAI_G_19/llm_ayesha/fass_pair_chunks.csv")
-    fallback_df = pd.read_csv("LLMSCAI_G_19/llm_ayesha/fass_fallback_chunks.csv")
+    pair_df = pd.read_csv(DATA_DIR / "fass_pair_chunks.csv")
+    fallback_df = pd.read_csv(DATA_DIR / "fass_fallback_chunks.csv")
 
     pair_examples = build_pair_examples(pair_df)
     fallback_examples = build_fallback_examples(fallback_df)
