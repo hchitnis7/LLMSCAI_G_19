@@ -4,3 +4,13 @@
 __pycache__/
 *.py[cod]
 test images/*.png
+
+.env
+.streamlit/secrets.toml
+*.pyc
+.venv/
+venv/
+drug_db/
+logs/
+app_cache/
+.pytest_cache/
