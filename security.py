@@ -63,3 +63,37 @@ def log_suspicious(source: str, text: str, matched_patterns: list):
     if matched_patterns:
         print(f"[SECURITY] Suspicious input from {source}: {matched_patterns} "
               f"| text preview: {text[:120]!r}")
+
+
+# ----------------------------------------------------------------- output-side guard
+# The prompt forbids calling anything "safe", but a language model occasionally still does
+# ("it's safe to continue driving"). This is a deterministic last line of defence: any sentence
+# that ASSERTS safety (no negation, no hedge such as "whether", "to be safe, ask...") is removed
+# before the user sees it. Curly apostrophes are normalised first - models emit them.
+_NEG = re.compile(r"\b(not|no|never|cannot|without|unsafe|inte|ingen|inget|aldrig|osäker|ej|ska inte)\b|\w+n't", re.I)
+_HEDGE = re.compile(r"\b(whether|if|unless|confirm|check|ask|verify|sure|determine|unclear|unknown|"
+                    r"to be safe|better safe|play it safe|stay safe|om det är|kontrollera|fråga|osäkert)\b", re.I)
+_SAFE = re.compile(r"\b(safe|säker|säkert|harmless|ofarlig|fine to (take|combine|use|mix)|no (risk|problem)s?|"
+                   r"inga risker|inga problem|risk-free)\b", re.I)
+
+
+_BENIGN_SAFE = re.compile(r"\bsafe(r)? (alternatives?|options?|ways?|treatments?|places?|medicines?|choices?)\b|"
+                          r"\bsäker(t)? (alternativ|sätt|behandling)\b", re.I)
+
+
+def asserts_safety(sentence: str) -> bool:
+    """True if the sentence claims something is safe/harmless (no negation, no hedge)."""
+    sent = _BENIGN_SAFE.sub("", sentence.replace("\u2019", "'").replace("\u2018", "'"))
+    return bool(_SAFE.search(sent) and not _NEG.search(sent) and not _HEDGE.search(sent))
+
+
+def strip_safety_assertions(text: str):
+    """Returns (clean_text, removed_sentences)."""
+    norm = text.replace("’", "'").replace("‘", "'")
+    kept, removed = [], []
+    for sent in re.split(r"(?<=[.!?])\s+", norm):
+        if asserts_safety(sent):
+            removed.append(sent.strip())
+        else:
+            kept.append(sent)
+    return " ".join(kept).strip() if removed else text, removed

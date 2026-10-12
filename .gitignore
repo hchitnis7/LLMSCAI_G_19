@@ -1,5 +1,5 @@
 /teamspace/studios/this_studio/LLMSCAI_G_19/test images__pycache__/
-
+llm_ayesha/fass_html_cache/
 # Python cache
 __pycache__/
 *.py[cod]
@@ -14,3 +14,7 @@ drug_db/
 logs/
 app_cache/
 .pytest_cache/
+demo_cache/20fe6d0f970f8eb1260c004e5815608e.json
+demo_cache/c8a923e33308eaa6ed99a80396b6ac3c.json
+demo_cache/21595edb7e91751538914a634a5e9e93.json
+scrape.log

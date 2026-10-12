@@ -1,0 +1,78 @@
+{
+  "backend": "csv",
+  "n": 200,
+  "A_matcher": {
+    "generic_name_bare_recall_%": 100.0,
+    "generic_name_in_sentence_recall_%": 100.0,
+    "brand_name_recall_%": 100.0,
+    "n_brand_aliases": 339,
+    "typo_recall_%": 89.4,
+    "pair_both_found_en_%": 94.0,
+    "pair_both_found_sv_%": 94.0,
+    "false_positive_confident_%_on_drug_free_text": 0.0,
+    "false_positive_any_(incl. 'did you mean?')_%": 16.7,
+    "n_negative_sentences": 12
+  },
+  "B_retrieval": {
+    "n_known_pairs_tested": 200,
+    "pair_found_%": 100.0,
+    "severity_correct_%_of_found": 100.0,
+    "gold_sentence_retrieved_%_of_found": 100.0,
+    "order_invariant_severity_%": 100.0,
+    "severity_confusion(gold->got)": {
+      "AVOID->AVOID": 21,
+      "CAUTION->CAUTION": 26,
+      "DANGEROUS->DANGEROUS": 3,
+      "INFO->INFO": 150
+    },
+    "latency": {
+      "mean_ms": 0.3,
+      "p50_ms": 0.3,
+      "p95_ms": 0.3
+    },
+    "random_pair_coverage": {
+      "pair": 0.5,
+      "statement": 1.0,
+      "none": 98.5
+    },
+    "random_pair_coverage_note": "'none' means the bot must say 'no data' - expected for most random pairs; the safety property is that it never invents a severity."
+  },
+  "C_intents_topics": {
+    "n": 20,
+    "intent_recall_%": 100.0,
+    "topic_exact_%": 100.0,
+    "misses": []
+  },
+  "D_section_coverage": {
+    "rows": 3913,
+    "drugs_with_any_section_%": 67.3,
+    "contraindications_coverage_%_of_drugs": 67.3,
+    "dosage_coverage_%_of_drugs": 67.0,
+    "driving_coverage_%_of_drugs": 67.3,
+    "indications_coverage_%_of_drugs": 67.3,
+    "interactions_coverage_%_of_drugs": 67.3,
+    "overdose_coverage_%_of_drugs": 67.3,
+    "pregnancy_breastfeeding_coverage_%_of_drugs": 67.3,
+    "side_effects_coverage_%_of_drugs": 67.3,
+    "warnings_coverage_%_of_drugs": 67.3,
+    "median_chars_per_section": 980
+  },
+  "E_ayesha_hybrid_search": {
+    "retrieval_evaluation_results_exact_hybrid.csv": {
+      "n": 20,
+      "found_%": 100.0,
+      "recall@1_%": 100.0,
+      "recall@3_%": 100.0,
+      "recall@5_%": 100.0,
+      "MRR": 1.0
+    },
+    "fallback_evaluation_results_final.csv": {
+      "n": 20,
+      "found_%": 100.0,
+      "recall@1_%": 90.0,
+      "recall@3_%": 95.0,
+      "recall@5_%": 100.0,
+      "MRR": 0.938
+    }
+  }
+}
