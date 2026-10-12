@@ -24,8 +24,12 @@ huggingface_hub>=0.23.0
 # --- UI (deployment teammate's side, listed for reference) ---
 streamlit>=1.35.0
 
+requests>=2.31.0          # also used by src/b_client.py
 # --- Utilities ---
 python-dotenv>=1.0.0
 tqdm>=4.66.0
+numpy>=1.26.0
+pytest>=8.0.0
+
 
 # NOTE: install torch separately matching your GPU/CUDA, see install.sh
