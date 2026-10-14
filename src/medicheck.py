@@ -33,7 +33,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 from . import safety
-from .contracts import (DISCLAIMERS, LANGUAGE_INSTRUCTION, LANGUAGES, PHARMACIST_LINE,
+from .contracts import (DISCLAIMERS, LANGUAGE_INSTRUCTION, LANGUAGES, MODEL_LABELS, PHARMACIST_LINE,
                         PREGNANCY_LINE, CheckResult, Extraction, validate_result)
 
 
@@ -166,7 +166,7 @@ def _finalize(result: dict, message: str, lang: str) -> dict:
     if result.get("safety_flag") in ("crisis", "dose", "injection", "backend_down"):
         result["notes"] = []
         return result
-    if result.get("model") not in ("stub",) and safety.contains_dose_advice(result.get("explanation", "")):
+    if result.get("model") not in ("stub",) and not result.get("grounded") and safety.contains_dose_advice(result.get("explanation", "")):
         result["explanation"] = safety.MESSAGES["dose_in_answer"][lang]
         result["safety_flag"] = "dose_in_answer"
     notes = [PHARMACIST_LINE[lang]]
@@ -244,6 +244,35 @@ def check(names: list[str], question: str = "", lang: str = "sv") -> CheckResult
     return result
 
 
+_API_DISCLAIMER_RE = re.compile(r"\s*This is not medical advice\. Please confirm with a pharmacist or doctor\.\s*$")
+
+
+def _from_api_response(raw: dict, lang: str) -> CheckResult:
+    """Map the service's JSON to a display result. Falls back to label parsing for old services."""
+    if "severity" not in raw and "drugs" not in raw:
+        return _from_model_text(raw["answer"], lang, model="b-api")
+    text = _API_DISCLAIMER_RE.sub("", raw["answer"]).strip()   # the app shows its own disclaimer
+    sev = raw.get("severity")
+    if sev not in MODEL_LABELS:
+        # no severity: gap / no-drug / confirmation prompts are "unknown"; other answers are information,
+        # never a green light ("no documented interaction" is not "safe")
+        unknown = raw.get("gap") or raw.get("status") in ("no_drug", "needs_confirmation")
+        sev = "INSUFFICIENT_DATA" if unknown else "INFO"
+    cites = []
+    for c in raw.get("citations") or []:
+        is_url = str(c).startswith("http")
+        cites.append({"source": "FASS", "section": "SmPC" if is_url else str(c),
+                      "url": str(c) if is_url else "https://fass.se"})
+    flag = raw.get("safety_flag")
+    return {
+        "drugs": [d.get("name", "") if isinstance(d, dict) else str(d) for d in raw.get("drugs") or []],
+        "atc_codes": [], "severity": sev, "explanation": text, "citations": cites,
+        "confidence": 0.0, "disclaimer": DISCLAIMERS[lang], "language": lang,
+        "from_cache": False, "db_last_updated": "", "model": "b-api", "safety_flag": flag,
+        "grounded": bool(cites), "gap": bool(raw.get("gap")),
+    }
+
+
 def _from_model_text(answer: str, lang: str, model: str) -> CheckResult:
     """Convert a free-text answer from the model service into a display result."""
     label = safety.parse_label(answer)
@@ -275,7 +304,7 @@ def chat(message: str, lang: str = "sv", state=None, image_bytes: bytes | None =
         return {**_canned(flag, lang), "state": state}
 
     # 2. Cache lookup, only for the first message without a photo; later messages depend on context
-    first_turn = state in (None, {}, []) and not image_bytes
+    first_turn = state in (None, {}, []) and not image_bytes and backend != "b_api"
     key = chat_cache_key(message, lang) if first_turn else None
     if key:
         cached = _cache_get(key)
@@ -290,10 +319,12 @@ def chat(message: str, lang: str = "sv", state=None, image_bytes: bytes | None =
     if backend == "b_api":
         from . import b_client
         try:
-            reply = b_client.ask(f"{message}\n\n{LANGUAGE_INSTRUCTION[lang]}",
+            # Send the raw message: the service detects the language itself, and appending an
+            # instruction here broke short replies such as "yes" (confirming an unsure drug name).
+            reply = b_client.ask(message,
                                  state=state if state is not None else b_client.initial_state(),
                                  image_bytes=image_bytes)
-            result = _from_model_text(reply["answer"], lang, model="b-api")
+            result = _from_api_response(reply.get("raw") or {"answer": reply["answer"]}, lang)
             new_state = reply["state"]
         except (b_client.BUnavailable, b_client.BBadResponse) as e:
             _log({"event": "backend_error", "backend": "b_api", "error": type(e).__name__,

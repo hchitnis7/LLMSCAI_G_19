@@ -132,10 +132,11 @@ def test_b_answer_is_shown_with_badge_and_state(monkeypatch):
 
 
 @pytest.mark.parametrize("lang", LANGUAGES)
-def test_language_instruction_is_sent_to_b(monkeypatch, lang):
+def test_raw_message_is_sent_to_b(monkeypatch, lang):
+    """No instruction is appended: the service detects the language, and "yes" must stay "yes"."""
     fake = use_fake_b(monkeypatch)
     medicheck.chat("Waran + Ipren", lang)
-    assert LANGUAGE_INSTRUCTION[lang] in fake.calls[0]["json"]["text"]
+    assert fake.calls[0]["json"]["text"] == "Waran + Ipren"
 
 
 def test_state_is_sent_back_on_the_next_turn(monkeypatch):
@@ -198,14 +199,11 @@ def test_b_problems_give_a_friendly_message(monkeypatch, problem):
     assert res["state"] is None
 
 
-def test_first_turn_is_cached_but_later_turns_are_not(monkeypatch):
+def test_live_model_answers_are_never_cached(monkeypatch):
     fake = use_fake_b(monkeypatch, state={"meds": ["warfarin"]})
     medicheck.chat("Waran + Ipren", "en")
     again = medicheck.chat("Waran + Ipren", "en")
-    assert again["from_cache"] is True and len(fake.calls) == 1
-    medicheck.chat("And alcohol?", "en", state={"meds": ["warfarin"]})
-    medicheck.chat("And alcohol?", "en", state={"meds": ["warfarin"]})
-    assert len(fake.calls) == 3
+    assert again["from_cache"] is False and len(fake.calls) == 2
 
 
 def test_chat_log_has_no_user_text(monkeypatch, isolated):

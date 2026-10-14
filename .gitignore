@@ -1,20 +1,32 @@
-/teamspace/studios/this_studio/LLMSCAI_G_19/test images__pycache__/
-llm_ayesha/fass_html_cache/
-# Python cache
+# Python
 __pycache__/
 *.py[cod]
-test images/*.png
-
-.env
-.streamlit/secrets.toml
-*.pyc
 .venv/
 venv/
-drug_db/
+.pytest_cache/
+.DS_Store
+ 
+# Secrets
+.env
+.streamlit/secrets.toml
+ 
+# Runtime caches and logs
 logs/
 app_cache/
-.pytest_cache/
-demo_cache/20fe6d0f970f8eb1260c004e5815608e.json
-demo_cache/c8a923e33308eaa6ed99a80396b6ac3c.json
-demo_cache/21595edb7e91751538914a634a5e9e93.json
+demo_cache/
+drug_db/
+llm_ayesha/drug_db/
+llm_ayesha/fass_html_cache/
 scrape.log
+nohup.out
+ 
+# Generated results and training artefacts
+eval_*.json
+eval_*_report.md
+rag_metrics.*
+sft_data/
+adapter_checkpoints/
+adapter_l4_checkpoints/
+*.zip
+test images/*.png
+ 

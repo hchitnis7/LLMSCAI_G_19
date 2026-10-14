@@ -90,7 +90,7 @@ def health() -> bool:
 
 
 def ask(text: str, state=None, image_bytes: bytes | None = None) -> dict:
-    """Send one message to /answer and return {"answer": str, "state": ..., "ms": int}."""
+    """Send one message to /answer and return {"answer": str, "state": ..., "raw": dict, "ms": int}."""
     import requests
     cfg = config()
     if not cfg["url"]:
@@ -124,4 +124,6 @@ def ask(text: str, state=None, image_bytes: bytes | None = None) -> dict:
     if not isinstance(data, dict) or not isinstance(data.get("answer"), str):
         raise BBadResponse(f"expected {{'answer': str, 'state': ...}}, got: {str(data)[:300]}")
 
-    return {"answer": data["answer"], "state": data.get("state"), "ms": int((time.time() - t) * 1000)}
+    # "raw" keeps every field the service returned (severity, drugs, citations, safety_flag, gap, ...)
+    return {"answer": data["answer"], "state": data.get("state"), "raw": data,
+            "ms": int((time.time() - t) * 1000)}
