@@ -15,7 +15,7 @@ import re
 
 _CRISIS = [
     # English
-    r"suicid", r"kill myself", r"end my life", r"want to die", r"hurt myself", r"self[- ]?harm",
+    r"suicide", r"kill myself", r"end my life", r"want to die", r"hurt myself", r"self[- ]?harm",
     r"take (a lot|lots|all) of (my )?pills", r"overdose",
     # Swedish
     r"självmord", r"ta livet av mig", r"vill dö", r"skada mig själv", r"överdos",

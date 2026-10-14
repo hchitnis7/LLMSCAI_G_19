@@ -234,7 +234,33 @@ class Knowledge:
             for r in self._rank(f"{x['name']} {y['name']}", hits, k=2):
                 out.append(self._ev("statement", _interaction_text(r["text"]), [a["atc"], b["atc"]],
                                     [x["name"], y["name"]], severity=None, url=r["source_url"]))
+        if not out:
+            # last resort: the full SmPC 4.5 (interactions) text of either drug, if scraped, naming the other drug
+            for x, y in ((a, b), (b, a)):
+                names = {y["name"].lower()} | {n.lower() for n in y.get("aliases", [])}
+                names = {n for n in names if len(n) >= 4}
+                try:
+                    sec_rows = self.b.section_rows(x["atc"], "interactions")
+                except Exception:
+                    sec_rows = []
+                for r in sec_rows:
+                    if _terms_in(r["text"], names):
+                        out.append(self._ev("section", _best_sentences(r["text"], names), [a["atc"], b["atc"]],
+                                            [x["name"], y["name"]], severity=None, section="4.5",
+                                            label="FASS SmPC 4.5 (interactions)", url=r.get("source_url", "")))
+                        break
         return out
+
+    def has_interaction_data(self, drug):
+        """True if we hold ANY interaction text for this drug (so 'no mention of the other drug' is a
+        meaningful finding, not just missing data)."""
+        atc = drug["atc"]
+        if self.b.pair_rows_for(atc) or self.b.statement_rows(atc):
+            return True
+        try:
+            return bool(self.b.section_rows(atc, "interactions"))
+        except Exception:
+            return False
 
     # -- non-drug interactant (alcohol, grapefruit, St John's wort, caffeine, ...)
     def topic_evidence(self, drug, terms, label_topic):

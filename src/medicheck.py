@@ -29,6 +29,8 @@ import re
 import time
 from datetime import datetime, timezone
 from pathlib import Path
+from dotenv import load_dotenv
+load_dotenv()
 
 from . import safety
 from .contracts import (DISCLAIMERS, LANGUAGE_INSTRUCTION, LANGUAGES, PHARMACIST_LINE,

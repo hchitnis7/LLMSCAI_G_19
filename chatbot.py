@@ -363,6 +363,26 @@ def _gap_reply(gap_items, lang_name, atc_evidence, drug_list):
             pass
     return msg
 
+
+def _no_interaction_reply(a, b, lang_name):
+    if lang_name == "Swedish":
+        msg = (f"Jag har gått igenom FASS-texten om interaktioner för {a} och {b}, och ingen av dem nämner den andra, "
+               f"så jag hittar ingen dokumenterad interaktion mellan dem. Det är ingen garanti för att det passar just dig. "
+               f"Det beror på dos, sjukdomar och andra läkemedel, så en apotekare eller 1177 kan bekräfta. "
+               f"Berätta gärna vad du annars tar, så kollar jag det också.")
+    else:
+        msg = (f"I went through the FASS interaction text I have for {a} and {b}, and neither mentions the other, "
+               f"so I found no documented interaction between them. That is not a guarantee that it suits you. "
+               f"It depends on doses, health conditions and other medicines, so a pharmacist or 1177 can confirm. "
+               f"If you tell me what else you take, I can check that too.")
+    if lang_name not in ("English", "Swedish"):
+        try:
+            msg = _generate_reply("You are a translator. Translate the user's message into " + lang_name +
+                                  ". Output only the translation, add nothing.", msg).strip() or msg
+        except Exception:
+            pass
+    return msg
+
 # ----------------------------------------------------------------- main entry point
 def answer(text: str, image_bytes: bytes = None, state: dict = None) -> dict:
     """Main pipeline entry point.
@@ -394,9 +414,9 @@ def answer(text: str, image_bytes: bytes = None, state: dict = None) -> dict:
 
     # 1. Safety routing -- before any model/DB call
     if SELF_HARM_PATTERN.search(text):
-        return _finish("refused", SELF_HARM_RESPONSE, state, text)
+        return _finish("refused", SELF_HARM_RESPONSE, state, text, extra={"safety_flag": "crisis"})
     if DOSE_PATTERN.search(text):
-        return _finish("refused", DOSE_RESPONSE + DISCLAIMER, state, text)
+        return _finish("refused", DOSE_RESPONSE + DISCLAIMER, state, text, extra={"safety_flag": "dose"})
 
     # 1b. Log (don't hard-block on) jailbreak/injection heuristics -- see
     # security.py; false positives are likely on free-text medical questions,
@@ -541,6 +561,19 @@ def answer(text: str, image_bytes: bytes = None, state: dict = None) -> dict:
     # from its own memory (side effects, "you can drink alcohol with X"...). Reply with a fixed,
     # honest "I don't have that" message instead.
     substantive = [e for e in evidence if e["kind"] in ("pair", "statement", "section")]
+    # A pair question where we hold interaction text for BOTH drugs but neither names the other is a real
+    # finding ("no documented interaction"), not missing data -- say that instead of "I have no information".
+    if (not substantive and gap_items and all(g["type"] == "pair" for g in gap_items)
+            and all(kn.has_interaction_data(d) for d in lookup_drugs[:2])):
+        reply = _no_interaction_reply(gap_items[0]["a"], gap_items[0]["b"], lang_name)
+        reply = reply if reply.strip().endswith(DISCLAIMER.strip()) else reply + DISCLAIMER
+        hist = list(state["history"])
+        if text.strip():
+            hist.append(["user", text])
+        hist.append(["assistant", reply])
+        state["history"] = hist[-MAX_HISTORY_TURNS:]
+        return {"status": "ok", "answer": reply, "drugs": drug_list, "severity": None,
+                "citations": [], "state": state, "gap": False, "no_interaction_found": True}
     if not substantive and gap_items:
         reply = _gap_reply(gap_items, lang_name, [e for e in evidence if e["kind"] == "atc"], drug_list)
         reply = reply if reply.strip().endswith(DISCLAIMER.strip()) else reply + DISCLAIMER
