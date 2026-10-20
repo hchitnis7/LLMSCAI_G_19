@@ -370,13 +370,13 @@ def main():
     real_generate = chatbot._generate_reply
 
     if args.dry_run:
-        def gen(system_prompt, user_content, model=None):
+        def gen(system_prompt, user_content, model=None, max_new=None):
             captured["user"] = user_content
             return "Based on the FASS information provided, here is a short explanation. Please check with a pharmacist."
     else:
-        def gen(system_prompt, user_content, model=None):
+        def gen(system_prompt, user_content, model=None, max_new=None):
             captured["user"] = user_content
-            return real_generate(system_prompt, user_content, model)
+            return real_generate(system_prompt, user_content, model, max_new)
     chatbot._generate_reply = gen
 
     cases = build_cases(Path(args.data_dir), args.n_pairs, args.seed)

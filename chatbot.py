@@ -168,17 +168,8 @@ def _extract_candidates_from_ocr(raw_text: str) -> list:
     matched = flag_injection_attempt(raw_text)
     log_suspicious("ocr_text", raw_text, matched)
 
-    _load_model()
-    msgs = [
-        {"role": "system", "content": EXTRACTION_SYSTEM_PROMPT},
-        {"role": "user", "content": wrap_untrusted("ocr_text", raw_text)},
-    ]
-    prompt = _tok.apply_chat_template(msgs, tokenize=False, add_generation_prompt=True,
-                                      enable_thinking=False)
-    inputs = _tok(prompt, return_tensors="pt").to(_model.device)
-    with torch.no_grad():
-        out = _model.generate(**inputs, max_new_tokens=150, do_sample=False)
-    raw_out = _tok.decode(out[0][inputs.input_ids.shape[1]:], skip_special_tokens=True).strip()
+    # goes through _generate_reply so it works with BOTH backends (local GPU model and Groq)
+    raw_out = _generate_reply(EXTRACTION_SYSTEM_PROMPT, wrap_untrusted("ocr_text", raw_text), max_new=150).strip()
 
     try:
         candidates = json.loads(raw_out)
@@ -317,7 +308,7 @@ def _strip_think(text):
     return re.sub(r"^.*?</think>", "", text, flags=re.S | re.I).strip()   # a stray closing tag
 
 
-def _groq_reply(system_prompt, user_content, model=None):
+def _groq_reply(system_prompt, user_content, model=None, max_new=None):
     import requests
     key = os.environ.get("GROQ_API_KEY", "").strip()
     if not key:
@@ -331,7 +322,7 @@ def _groq_reply(system_prompt, user_content, model=None):
         extra = {"reasoning_effort": "none"}     # no hidden thinking tokens: they would eat the token budget
     elif model.startswith("openai/gpt-oss"):
         extra = {"reasoning_effort": "low"}
-    max_tokens = MAX_NEW_TOKENS + (1000 if model.startswith("openai/gpt-oss") else 0)
+    max_tokens = (max_new or MAX_NEW_TOKENS) + (1000 if model.startswith("openai/gpt-oss") else 0)
     payload = {"model": model, "temperature": 0, "max_completion_tokens": max_tokens,
                "messages": [{"role": "system", "content": system_prompt},
                             {"role": "user", "content": user_content}]}
@@ -372,9 +363,9 @@ def _groq_reply(system_prompt, user_content, model=None):
     raise LLMUnavailable("Groq: too many retries")
 
 
-def _generate_reply(system_prompt: str, user_content: str, model: str = None) -> str:
+def _generate_reply(system_prompt: str, user_content: str, model: str = None, max_new: int = None) -> str:
     if LLM_BACKEND == "groq":
-        return _groq_reply(system_prompt, user_content, model)
+        return _groq_reply(system_prompt, user_content, model, max_new)
     import torch
     _load_model()
     msgs = [{"role": "system", "content": system_prompt},
@@ -383,7 +374,7 @@ def _generate_reply(system_prompt: str, user_content: str, model: str = None) ->
                                       enable_thinking=False)
     inputs = _tok(prompt, return_tensors="pt").to(_model.device)
     with torch.no_grad():
-        out = _model.generate(**inputs, max_new_tokens=MAX_NEW_TOKENS, do_sample=False)
+        out = _model.generate(**inputs, max_new_tokens=max_new or MAX_NEW_TOKENS, do_sample=False)
     return _tok.decode(out[0][inputs.input_ids.shape[1]:], skip_special_tokens=True)
 
 
