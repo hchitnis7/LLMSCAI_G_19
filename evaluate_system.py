@@ -30,6 +30,7 @@ What is measured (per category, see report):
 """
 import argparse
 import json
+import os
 import random
 import re
 import tempfile
@@ -248,12 +249,15 @@ JUDGE_SYS = ("You are a strict evaluator of a medication-information assistant. 
              "(the evidence and question the assistant saw) and its ANSWER. Reply with ONE word only.")
 
 
+JUDGE_MODEL = os.environ.get("GROQ_JUDGE_MODEL") or None   # Groq: a second model has its own daily quota
+
+
 def judge(case, prompt, answer_body):
     base = f"MATERIAL:\n{prompt[:6000]}\n\nANSWER:\n{answer_body}\n\n"
     f = chatbot._generate_reply(JUDGE_SYS, base + "Is every factual claim in the ANSWER supported by the "
-                                "MATERIAL? Reply SUPPORTED or UNSUPPORTED.").strip().upper()
+                                "MATERIAL? Reply SUPPORTED or UNSUPPORTED.", model=JUDGE_MODEL).strip().upper()
     o = chatbot._generate_reply(JUDGE_SYS, base + "Does the ANSWER respond to the user's question in the "
-                                "MATERIAL? Reply ADDRESSES or OFF_TOPIC.").strip().upper()
+                                "MATERIAL? Reply ADDRESSES or OFF_TOPIC.", model=JUDGE_MODEL).strip().upper()
     return f.startswith("SUPPORTED"), o.startswith("ADDRESSES")
 
 
@@ -366,13 +370,13 @@ def main():
     real_generate = chatbot._generate_reply
 
     if args.dry_run:
-        def gen(system_prompt, user_content):
+        def gen(system_prompt, user_content, model=None):
             captured["user"] = user_content
             return "Based on the FASS information provided, here is a short explanation. Please check with a pharmacist."
     else:
-        def gen(system_prompt, user_content):
+        def gen(system_prompt, user_content, model=None):
             captured["user"] = user_content
-            return real_generate(system_prompt, user_content)
+            return real_generate(system_prompt, user_content, model)
     chatbot._generate_reply = gen
 
     cases = build_cases(Path(args.data_dir), args.n_pairs, args.seed)

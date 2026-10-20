@@ -14,6 +14,8 @@ _PATTERNS = {
         r"\bwhy (do|would) i take\b", r"\bwhat does .* treat\b",
         r"\bvad (är|används) .* för\b", r"\bvarför tar jag\b",
         r"\bvad används .* (mot|till)\b",
+        # bare "what is X" / "tell me about X" / "vad är X" (one or two words after) = what is it / what is it for
+        r"^\s*(what('?s| is| are)|tell me (about|more about)|explain|vad är|berätta om)\s+(an? |the |en |ett )?[\w\-åäöÅÄÖ]+(\s+[\w\-åäöÅÄÖ]+)?\s*\??\s*$",
     ],
     "side_effects": [
         r"\bside ?effects?\b", r"\badverse (effects?|reactions?)\b",

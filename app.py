@@ -145,7 +145,10 @@ def render_result(res: dict) -> None:
         if res.get("citations"):
             st.markdown(f"**{t['sources']}**")
             for c in res["citations"]:
-                st.markdown(f"- [{c['source']}: {c['section']}]({c['url']})")
+                if c.get("url"):
+                    st.markdown(f"- [{c['source']}: {c['section']}]({c['url']})")
+                else:
+                    st.markdown(f"- {c['source']}: {c['section']}")
         for note in res.get("notes", []):
             st.markdown(f"- {note}")
         meta = []

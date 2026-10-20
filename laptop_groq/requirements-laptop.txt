@@ -1,0 +1,18 @@
+# Laptop / Groq setup: no GPU, no local LLM. (torch is installed separately, see the instructions.)
+pandas>=2.0.0
+numpy>=1.26.0
+chromadb>=0.5.0
+sentence-transformers>=3.0.0
+easyocr>=1.7.1
+opencv-python-headless>=4.9.0
+pillow>=10.0.0
+rapidfuzz>=3.6.0
+langdetect>=1.0.9
+requests>=2.31.0
+python-dotenv>=1.0.0
+tqdm>=4.66.0
+fastapi
+uvicorn
+python-multipart
+streamlit>=1.35.0
+pytest>=8.0.0

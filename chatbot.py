@@ -50,9 +50,10 @@ import os
 import re
 from pathlib import Path
 
-import torch
-from transformers import AutoModelForCausalLM, AutoTokenizer
+import time
 
+# torch / transformers are only needed for the LOCAL model; they are imported lazily so a laptop that
+# uses Groq does not need them for the language model.
 from intents import detect_intents
 from knowledge import SECTION_LABELS, Knowledge, worst_severity
 from matcher import brands_for, match_drugs
@@ -196,6 +197,7 @@ _embedder = None
 
 
 def _check_gpu():
+    import torch
     """Fails loudly instead of silently falling back to CPU -- a large model
     on CPU 'works' in the sense that it doesn't crash, it just loads for a
     very long time and generates at a speed indistinguishable from hanging,
@@ -217,14 +219,27 @@ def _check_gpu():
 
 def _load_model():
     global _tok, _model
+    if LLM_BACKEND == "groq":
+        return   # nothing to load: the model runs on Groq's servers
     if _model is not None:
         return
+    import torch
+    from transformers import AutoModelForCausalLM, AutoTokenizer
     _check_gpu()
     print(f"Loading {MODEL_ID} (bf16)" + (f" + adapter {ADAPTER_PATH}" if ADAPTER_PATH else ""))
     _tok = AutoTokenizer.from_pretrained(MODEL_ID)
-    _model = AutoModelForCausalLM.from_pretrained(
-        MODEL_ID, torch_dtype=torch.bfloat16, device_map="auto",
-    )
+    quant = os.environ.get("MEDICHECK_QUANT", "").lower()   # "4bit" / "8bit" for GPUs with < 80 GB
+    if quant in ("4bit", "8bit"):
+        from transformers import BitsAndBytesConfig
+        qcfg = (BitsAndBytesConfig(load_in_4bit=True, bnb_4bit_quant_type="nf4",
+                                   bnb_4bit_compute_dtype=torch.bfloat16)
+                if quant == "4bit" else BitsAndBytesConfig(load_in_8bit=True))
+        print(f"Quantising to {quant} (MEDICHECK_QUANT)")
+        _model = AutoModelForCausalLM.from_pretrained(MODEL_ID, quantization_config=qcfg, device_map="auto")
+    else:
+        _model = AutoModelForCausalLM.from_pretrained(
+            MODEL_ID, torch_dtype=torch.bfloat16, device_map="auto",
+        )
     if ADAPTER_PATH:
         from peft import PeftModel
         _model = PeftModel.from_pretrained(_model, ADAPTER_PATH)
@@ -259,7 +274,108 @@ def _get_knowledge():
     return _knowledge
 
 
-def _generate_reply(system_prompt: str, user_content: str) -> str:
+# ----------------------------------------------------------------- Groq backend (hosted, free tier)
+# Select with LLM_BACKEND=groq (default: "local" = load the Hugging Face model on this machine's GPU).
+#   GROQ_API_KEY      key from https://console.groq.com/keys
+#   GROQ_MODEL        default qwen/qwen3.8-27b   (fallback: openai/gpt-oss-20b)
+#   GROQ_JUDGE_MODEL  optional second model for the evaluation judge (separate daily quota)
+#   GROQ_TPM          tokens/minute budget used for pacing (free tier: 8000 per model; default 7000)
+#   GROQ_EXTRA        optional JSON of extra request fields, e.g. {"reasoning_effort": "none"}
+LLM_BACKEND = os.environ.get("LLM_BACKEND", "local").strip().lower()
+GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
+GROQ_MODEL = os.environ.get("GROQ_MODEL", "qwen/qwen3.8-27b")
+GROQ_TPM = int(os.environ.get("GROQ_TPM", "7000"))
+_groq_windows = {}
+_groq_no_extra = set()   # models that rejected the extra request fields (remembered, so no wasted calls)
+
+
+class LLMUnavailable(RuntimeError):
+    """The hosted model could not be used (bad key, daily quota used up, network error)."""
+
+
+def _est_tokens(*texts, extra=0):
+    return int(sum(len(t) for t in texts) / 3.0) + extra     # conservative: ~3 characters per token
+
+
+def _groq_pace(model, need):
+    """Sleep until `need` tokens fit inside the per-minute budget for this model."""
+    win = _groq_windows.setdefault(model, [])
+    while True:
+        now = time.time()
+        win[:] = [(t, n) for (t, n) in win if now - t < 60]
+        used = sum(n for _, n in win)
+        if used + need <= GROQ_TPM or not win:
+            win.append((now, need))
+            return
+        wait = 60 - (now - win[0][0]) + 0.5
+        print(f"[groq] pacing: waiting {wait:.0f}s for the per-minute token budget")
+        time.sleep(max(wait, 1))
+
+
+def _strip_think(text):
+    text = re.sub(r"<think>.*?</think>", "", text, flags=re.S | re.I)
+    return re.sub(r"^.*?</think>", "", text, flags=re.S | re.I).strip()   # a stray closing tag
+
+
+def _groq_reply(system_prompt, user_content, model=None):
+    import requests
+    key = os.environ.get("GROQ_API_KEY", "").strip()
+    if not key:
+        raise LLMUnavailable("GROQ_API_KEY is not set (put it in .env)")
+    model = model or GROQ_MODEL
+    extra = {}
+    raw_extra = os.environ.get("GROQ_EXTRA", "").strip()
+    if raw_extra:
+        extra = json.loads(raw_extra)
+    elif model.startswith("qwen/"):
+        extra = {"reasoning_effort": "none"}     # no hidden thinking tokens: they would eat the token budget
+    elif model.startswith("openai/gpt-oss"):
+        extra = {"reasoning_effort": "low"}
+    max_tokens = MAX_NEW_TOKENS + (1000 if model.startswith("openai/gpt-oss") else 0)
+    payload = {"model": model, "temperature": 0, "max_completion_tokens": max_tokens,
+               "messages": [{"role": "system", "content": system_prompt},
+                            {"role": "user", "content": user_content}]}
+    headers = {"Authorization": f"Bearer {key}", "Content-Type": "application/json"}
+    need = _est_tokens(system_prompt, user_content, extra=max_tokens)
+    use_extra = model not in _groq_no_extra
+    for attempt in range(6):
+        _groq_pace(model, need)
+        body = {**payload, **(extra if use_extra else {})}
+        try:
+            r = requests.post(GROQ_URL, json=body, headers=headers, timeout=120)
+        except requests.RequestException as e:
+            if attempt < 2:
+                time.sleep(2 * (attempt + 1))
+                continue
+            raise LLMUnavailable(f"could not reach Groq: {e}") from e
+        if r.status_code == 200:
+            msg = r.json()["choices"][0]["message"].get("content") or ""
+            return _strip_think(msg)
+        if r.status_code == 400 and use_extra and extra:
+            use_extra = False                      # this model rejects the extra field: retry without it
+            _groq_no_extra.add(model)
+            print(f"[groq] 400 with extra fields {list(extra)}; retrying without them: {r.text[:160]}")
+            continue
+        if r.status_code == 429:
+            wait = float(r.headers.get("retry-after", "20"))
+            if wait > 90:
+                raise LLMUnavailable(f"Groq daily/rate quota used up for {model}; retry in {wait/60:.0f} min")
+            print(f"[groq] 429, waiting {wait:.0f}s")
+            time.sleep(wait + 1)
+            continue
+        if r.status_code in (401, 403):
+            raise LLMUnavailable(f"Groq rejected the API key (HTTP {r.status_code})")
+        if r.status_code >= 500 and attempt < 3:
+            time.sleep(3 * (attempt + 1))
+            continue
+        raise LLMUnavailable(f"Groq error HTTP {r.status_code}: {r.text[:200]}")
+    raise LLMUnavailable("Groq: too many retries")
+
+
+def _generate_reply(system_prompt: str, user_content: str, model: str = None) -> str:
+    if LLM_BACKEND == "groq":
+        return _groq_reply(system_prompt, user_content, model)
+    import torch
     _load_model()
     msgs = [{"role": "system", "content": system_prompt},
             {"role": "user", "content": user_content}]
@@ -275,17 +391,27 @@ def _generate_reply(system_prompt: str, user_content: str) -> str:
 # Only used for the FIRST turn of a conversation (no history yet) -- a
 # follow-up's correct answer depends on prior turns, which aren't part of
 # the cache key, so caching those risks serving a stale, context-blind reply.
+CACHE_VERSION = "v4"   # bump (or delete demo_cache/) whenever prompts, data or guards change
+NO_CACHE = os.environ.get("MEDICHECK_NO_CACHE", "0") == "1"   # set to 1 while testing/evaluating
+
+
 def _cache_key(drugs, text, intent_list):
-    key = json.dumps({"drugs": sorted(drugs), "q": text.lower().strip(), "intents": sorted(intent_list)})
+    key = json.dumps({"v": CACHE_VERSION, "adapter": bool(ADAPTER_PATH),
+                      "llm": (GROQ_MODEL if LLM_BACKEND == "groq" else MODEL_ID), "drugs": sorted(drugs),
+                      "q": text.lower().strip(), "intents": sorted(intent_list)})
     return hashlib.md5(key.encode()).hexdigest()
 
 
 def _cache_get(drugs, text, intent_list):
+    if NO_CACHE:
+        return None
     p = CACHE_DIR / f"{_cache_key(drugs, text, intent_list)}.json"
     return json.loads(p.read_text()) if p.exists() else None
 
 
 def _cache_set(drugs, text, intent_list, result):
+    if NO_CACHE:
+        return
     p = CACHE_DIR / f"{_cache_key(drugs, text, intent_list)}.json"
     p.write_text(json.dumps(result, ensure_ascii=False))
 
@@ -583,7 +709,9 @@ def answer(text: str, image_bytes: bytes = None, state: dict = None) -> dict:
         hist.append(["assistant", reply])
         state["history"] = hist[-MAX_HISTORY_TURNS:]
         return {"status": "ok", "answer": reply, "drugs": drug_list, "severity": None,
-                "citations": sorted({e["label"] for e in evidence}), "state": state, "gap": True}
+                "citations": sorted({e["label"] for e in evidence}),
+                "citation_details": [{"label": l, "url": ""} for l in sorted({e["label"] for e in evidence})],
+                "state": state, "gap": True}
 
     severity = worst_severity(evidence)
 
@@ -618,9 +746,21 @@ def answer(text: str, image_bytes: bytes = None, state: dict = None) -> dict:
     hist.append(["assistant", reply])
     state["history"] = hist[-MAX_HISTORY_TURNS:]
 
+    # Readable citations: which FASS section, and which drug pair/statement it came from. A row about
+    # "paracetamol + X" lives in X's SmPC, so the label names the drugs rather than just the page.
+    seen, citation_details = set(), []
+    for e in evidence:
+        names = " + ".join(e.get("drugs") or [])
+        label = f"{e['label']}: {names}" if names else e["label"]
+        k = (e.get("source_url", ""), label)
+        if k in seen:
+            continue
+        seen.add(k)
+        citation_details.append({"label": label, "url": e.get("source_url", "")})
     result = {
         "status": "ok", "answer": reply, "drugs": drug_list,
-        "severity": severity, "citations": citations, "state": state,
+        "severity": severity, "citations": citations, "citation_details": citation_details[:5],
+        "state": state,
     }
     if is_first_turn:
         _cache_set(cache_drug_names, text, intent_list,

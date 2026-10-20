@@ -244,14 +244,10 @@ def main():
     pair = pd.read_csv(DATA_DIR / "fass_pair_chunks.csv", dtype=str).fillna("")
     fallback = pd.read_csv(DATA_DIR / "fass_fallback_chunks.csv", dtype=str).fillna("")
 
-    products = {}  # npl_id -> {"atc":..., "drug_name":..., "product_name":..., "source_url":...}
-    for _, r in pair.iterrows():
-        for atc_col, name_col in [("drug_1_atc", "drug_1_name"), ("drug_2_atc", "drug_2_name")]:
-            url = _smpc_url_from(r.get("source_url", ""))
-            if url and r.get(atc_col):
-                products.setdefault(url, {"atc": r[atc_col], "drug_name": r[name_col],
-                                          "product_name": r.get("product_name", r[name_col]),
-                                          "source_url": url})
+    products = {}  # smpc url -> {"atc":..., "drug_name":..., "product_name":..., "source_url":...}
+    # A page belongs to ONE drug. The fallback rows come from a product's own section 4.5, so they name the
+    # true owner. Pair rows involve two drugs and cannot say which one owns the page (using them filed about
+    # a third of the pages under the wrong drug), so they are not used (about 2 of 435 pages lose their owner).
     for _, r in fallback.iterrows():
         url = _smpc_url_from(r.get("source_url", ""))
         if url and r.get("atc_code"):
@@ -271,7 +267,7 @@ def main():
     already_done = set()
     if OUT_FILE.exists():
         existing = pd.read_csv(OUT_FILE, dtype=str)
-        already_done = set(zip(existing["atc_code"], existing["section"]))
+        already_done = set(zip(existing["source_url"], existing["section"]))
         print(f"{len(already_done)} (atc, section) pairs already collected -- will skip those.")
 
     items = list(products.items())
@@ -280,7 +276,7 @@ def main():
 
     rows = []
     for i, (url, info) in enumerate(items):
-        pending = wanted_sections - {sec for (atc, sec) in already_done if atc == info["atc"]}
+        pending = wanted_sections - {sec for (u, sec) in already_done if u == url}
         if not pending:
             continue
         print(f"[{i+1}/{len(items)}] {info['drug_name']} ({info['atc']}) -> {url}")

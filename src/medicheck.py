@@ -259,10 +259,20 @@ def _from_api_response(raw: dict, lang: str) -> CheckResult:
         unknown = raw.get("gap") or raw.get("status") in ("no_drug", "needs_confirmation")
         sev = "INSUFFICIENT_DATA" if unknown else "INFO"
     cites = []
-    for c in raw.get("citations") or []:
-        is_url = str(c).startswith("http")
-        cites.append({"source": "FASS", "section": "SmPC" if is_url else str(c),
-                      "url": str(c) if is_url else "https://fass.se"})
+
+    def _cite(label: str, url: str) -> dict:
+        # Only FASS pages are FASS sources. The ATC drug-class note comes from the project's own lookup
+        # table, and a label with no page has no link (a bare fass.se link looks like a real source).
+        if label.startswith("WHO ATC"):
+            return {"source": "WHO ATC", "section": "drug class (project lookup)", "url": ""}
+        return {"source": "FASS", "section": label, "url": url if str(url).startswith("http") else ""}
+
+    for c in raw.get("citation_details") or []:
+        cites.append(_cite(str(c.get("label", "SmPC")), c.get("url", "")))
+    if not cites:   # older service: plain URLs or labels
+        for c in raw.get("citations") or []:
+            is_url = str(c).startswith("http")
+            cites.append(_cite("SmPC" if is_url else str(c), str(c) if is_url else ""))
     flag = raw.get("safety_flag")
     return {
         "drugs": [d.get("name", "") if isinstance(d, dict) else str(d) for d in raw.get("drugs") or []],
