@@ -446,9 +446,12 @@ def answer(text: str, image_bytes: bytes = None, state: dict = None) -> dict:
     # ("yes"), promote it instead of re-running the matcher on a one-word
     # reply that would obviously match nothing.
     drugs_dict = dict(state["drugs"])
-    if state["pending"] and text.strip().lower() in AFFIRMATIVE_REPLIES:
+    promoted_atcs = []
+    affirmed = bool(state["pending"]) and text.strip().lower() in AFFIRMATIVE_REPLIES
+    if affirmed:
         for c in state["pending"]:
             drugs_dict[c["atc"]] = {**c, "confident": True}
+            promoted_atcs.append(c["atc"])
         state["pending"] = []
         candidates = []
     else:
@@ -477,9 +480,7 @@ def answer(text: str, image_bytes: bytes = None, state: dict = None) -> dict:
     confident_new = [c for c in candidates if c.get("confident")]
     unsure_new = [c for c in candidates if not c.get("confident")]
     # drugs named in THIS message (typed, OCR, or just-confirmed) take priority over carried-over ones
-    current_atcs = [c["atc"] for c in confident_new]
-    if state["pending"] and text.strip().lower() in AFFIRMATIVE_REPLIES:
-        current_atcs = [c["atc"] for c in state["pending"]] + current_atcs
+    current_atcs = promoted_atcs + [c["atc"] for c in confident_new]
 
     for c in confident_new:
         drugs_dict[c["atc"]] = c
@@ -492,7 +493,14 @@ def answer(text: str, image_bytes: bytes = None, state: dict = None) -> dict:
     # If at least one drug is confidently known, answer about those and ask about the
     # uncertain one as a side note (below) -- otherwise a stray word that fuzzy-matches
     # some drug ("drive", "developer"...) would block a perfectly answerable question.
-    if unsure_new and not drugs_dict:
+    # A message that names only an unsure drug (typo like "alvedol") and asks nothing else we recognise
+    # is about THAT drug: confirm it instead of answering about carried-over drugs.
+    only_unsure = False
+    if unsure_new and not confident_new and not affirmed:
+        _t = detect_topics(text)
+        _i = [x for x in detect_intents(text, 0, _t) if x not in ("interaction", "overview")]
+        only_unsure = not _t and not _i
+    if unsure_new and (not drugs_dict or only_unsure):
         state["drugs"] = drugs_dict
         state["pending"] = unsure_new
         names = ", ".join(c["name"] for c in unsure_new)
