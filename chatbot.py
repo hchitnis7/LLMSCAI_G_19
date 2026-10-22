@@ -50,10 +50,9 @@ import os
 import re
 from pathlib import Path
 
-import time
+import torch
+from transformers import AutoModelForCausalLM, AutoTokenizer
 
-# torch / transformers are only needed for the LOCAL model; they are imported lazily so a laptop that
-# uses Groq does not need them for the language model.
 from intents import detect_intents
 from knowledge import SECTION_LABELS, Knowledge, worst_severity
 from matcher import brands_for, match_drugs
@@ -168,8 +167,17 @@ def _extract_candidates_from_ocr(raw_text: str) -> list:
     matched = flag_injection_attempt(raw_text)
     log_suspicious("ocr_text", raw_text, matched)
 
-    # goes through _generate_reply so it works with BOTH backends (local GPU model and Groq)
-    raw_out = _generate_reply(EXTRACTION_SYSTEM_PROMPT, wrap_untrusted("ocr_text", raw_text), max_new=150).strip()
+    _load_model()
+    msgs = [
+        {"role": "system", "content": EXTRACTION_SYSTEM_PROMPT},
+        {"role": "user", "content": wrap_untrusted("ocr_text", raw_text)},
+    ]
+    prompt = _tok.apply_chat_template(msgs, tokenize=False, add_generation_prompt=True,
+                                      enable_thinking=False)
+    inputs = _tok(prompt, return_tensors="pt").to(_model.device)
+    with torch.no_grad():
+        out = _model.generate(**inputs, max_new_tokens=150, do_sample=False)
+    raw_out = _tok.decode(out[0][inputs.input_ids.shape[1]:], skip_special_tokens=True).strip()
 
     try:
         candidates = json.loads(raw_out)
@@ -188,7 +196,6 @@ _embedder = None
 
 
 def _check_gpu():
-    import torch
     """Fails loudly instead of silently falling back to CPU -- a large model
     on CPU 'works' in the sense that it doesn't crash, it just loads for a
     very long time and generates at a speed indistinguishable from hanging,
@@ -210,12 +217,8 @@ def _check_gpu():
 
 def _load_model():
     global _tok, _model
-    if LLM_BACKEND == "groq":
-        return   # nothing to load: the model runs on Groq's servers
     if _model is not None:
         return
-    import torch
-    from transformers import AutoModelForCausalLM, AutoTokenizer
     _check_gpu()
     print(f"Loading {MODEL_ID} (bf16)" + (f" + adapter {ADAPTER_PATH}" if ADAPTER_PATH else ""))
     _tok = AutoTokenizer.from_pretrained(MODEL_ID)
@@ -265,108 +268,7 @@ def _get_knowledge():
     return _knowledge
 
 
-# ----------------------------------------------------------------- Groq backend (hosted, free tier)
-# Select with LLM_BACKEND=groq (default: "local" = load the Hugging Face model on this machine's GPU).
-#   GROQ_API_KEY      key from https://console.groq.com/keys
-#   GROQ_MODEL        default qwen/qwen3.8-27b   (fallback: openai/gpt-oss-20b)
-#   GROQ_JUDGE_MODEL  optional second model for the evaluation judge (separate daily quota)
-#   GROQ_TPM          tokens/minute budget used for pacing (free tier: 8000 per model; default 7000)
-#   GROQ_EXTRA        optional JSON of extra request fields, e.g. {"reasoning_effort": "none"}
-LLM_BACKEND = os.environ.get("LLM_BACKEND", "local").strip().lower()
-GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
-GROQ_MODEL = os.environ.get("GROQ_MODEL", "qwen/qwen3.8-27b")
-GROQ_TPM = int(os.environ.get("GROQ_TPM", "7000"))
-_groq_windows = {}
-_groq_no_extra = set()   # models that rejected the extra request fields (remembered, so no wasted calls)
-
-
-class LLMUnavailable(RuntimeError):
-    """The hosted model could not be used (bad key, daily quota used up, network error)."""
-
-
-def _est_tokens(*texts, extra=0):
-    return int(sum(len(t) for t in texts) / 3.0) + extra     # conservative: ~3 characters per token
-
-
-def _groq_pace(model, need):
-    """Sleep until `need` tokens fit inside the per-minute budget for this model."""
-    win = _groq_windows.setdefault(model, [])
-    while True:
-        now = time.time()
-        win[:] = [(t, n) for (t, n) in win if now - t < 60]
-        used = sum(n for _, n in win)
-        if used + need <= GROQ_TPM or not win:
-            win.append((now, need))
-            return
-        wait = 60 - (now - win[0][0]) + 0.5
-        print(f"[groq] pacing: waiting {wait:.0f}s for the per-minute token budget")
-        time.sleep(max(wait, 1))
-
-
-def _strip_think(text):
-    text = re.sub(r"<think>.*?</think>", "", text, flags=re.S | re.I)
-    return re.sub(r"^.*?</think>", "", text, flags=re.S | re.I).strip()   # a stray closing tag
-
-
-def _groq_reply(system_prompt, user_content, model=None, max_new=None):
-    import requests
-    key = os.environ.get("GROQ_API_KEY", "").strip()
-    if not key:
-        raise LLMUnavailable("GROQ_API_KEY is not set (put it in .env)")
-    model = model or GROQ_MODEL
-    extra = {}
-    raw_extra = os.environ.get("GROQ_EXTRA", "").strip()
-    if raw_extra:
-        extra = json.loads(raw_extra)
-    elif model.startswith("qwen/"):
-        extra = {"reasoning_effort": "none"}     # no hidden thinking tokens: they would eat the token budget
-    elif model.startswith("openai/gpt-oss"):
-        extra = {"reasoning_effort": "low"}
-    max_tokens = (max_new or MAX_NEW_TOKENS) + (1000 if model.startswith("openai/gpt-oss") else 0)
-    payload = {"model": model, "temperature": 0, "max_completion_tokens": max_tokens,
-               "messages": [{"role": "system", "content": system_prompt},
-                            {"role": "user", "content": user_content}]}
-    headers = {"Authorization": f"Bearer {key}", "Content-Type": "application/json"}
-    need = _est_tokens(system_prompt, user_content, extra=max_tokens)
-    use_extra = model not in _groq_no_extra
-    for attempt in range(6):
-        _groq_pace(model, need)
-        body = {**payload, **(extra if use_extra else {})}
-        try:
-            r = requests.post(GROQ_URL, json=body, headers=headers, timeout=120)
-        except requests.RequestException as e:
-            if attempt < 2:
-                time.sleep(2 * (attempt + 1))
-                continue
-            raise LLMUnavailable(f"could not reach Groq: {e}") from e
-        if r.status_code == 200:
-            msg = r.json()["choices"][0]["message"].get("content") or ""
-            return _strip_think(msg)
-        if r.status_code == 400 and use_extra and extra:
-            use_extra = False                      # this model rejects the extra field: retry without it
-            _groq_no_extra.add(model)
-            print(f"[groq] 400 with extra fields {list(extra)}; retrying without them: {r.text[:160]}")
-            continue
-        if r.status_code == 429:
-            wait = float(r.headers.get("retry-after", "20"))
-            if wait > 90:
-                raise LLMUnavailable(f"Groq daily/rate quota used up for {model}; retry in {wait/60:.0f} min")
-            print(f"[groq] 429, waiting {wait:.0f}s")
-            time.sleep(wait + 1)
-            continue
-        if r.status_code in (401, 403):
-            raise LLMUnavailable(f"Groq rejected the API key (HTTP {r.status_code})")
-        if r.status_code >= 500 and attempt < 3:
-            time.sleep(3 * (attempt + 1))
-            continue
-        raise LLMUnavailable(f"Groq error HTTP {r.status_code}: {r.text[:200]}")
-    raise LLMUnavailable("Groq: too many retries")
-
-
-def _generate_reply(system_prompt: str, user_content: str, model: str = None, max_new: int = None) -> str:
-    if LLM_BACKEND == "groq":
-        return _groq_reply(system_prompt, user_content, model, max_new)
-    import torch
+def _generate_reply(system_prompt: str, user_content: str) -> str:
     _load_model()
     msgs = [{"role": "system", "content": system_prompt},
             {"role": "user", "content": user_content}]
@@ -374,7 +276,7 @@ def _generate_reply(system_prompt: str, user_content: str, model: str = None, ma
                                       enable_thinking=False)
     inputs = _tok(prompt, return_tensors="pt").to(_model.device)
     with torch.no_grad():
-        out = _model.generate(**inputs, max_new_tokens=max_new or MAX_NEW_TOKENS, do_sample=False)
+        out = _model.generate(**inputs, max_new_tokens=MAX_NEW_TOKENS, do_sample=False)
     return _tok.decode(out[0][inputs.input_ids.shape[1]:], skip_special_tokens=True)
 
 
@@ -387,8 +289,7 @@ NO_CACHE = os.environ.get("MEDICHECK_NO_CACHE", "0") == "1"   # set to 1 while t
 
 
 def _cache_key(drugs, text, intent_list):
-    key = json.dumps({"v": CACHE_VERSION, "adapter": bool(ADAPTER_PATH),
-                      "llm": (GROQ_MODEL if LLM_BACKEND == "groq" else MODEL_ID), "drugs": sorted(drugs),
+    key = json.dumps({"v": CACHE_VERSION, "adapter": bool(ADAPTER_PATH), "drugs": sorted(drugs),
                       "q": text.lower().strip(), "intents": sorted(intent_list)})
     return hashlib.md5(key.encode()).hexdigest()
 
@@ -575,6 +476,10 @@ def answer(text: str, image_bytes: bytes = None, state: dict = None) -> dict:
 
     confident_new = [c for c in candidates if c.get("confident")]
     unsure_new = [c for c in candidates if not c.get("confident")]
+    # drugs named in THIS message (typed, OCR, or just-confirmed) take priority over carried-over ones
+    current_atcs = [c["atc"] for c in confident_new]
+    if state["pending"] and text.strip().lower() in AFFIRMATIVE_REPLIES:
+        current_atcs = [c["atc"] for c in state["pending"]] + current_atcs
 
     for c in confident_new:
         drugs_dict[c["atc"]] = c
@@ -595,10 +500,23 @@ def answer(text: str, image_bytes: bytes = None, state: dict = None) -> dict:
                        f"I found: {names}. Is that correct? (yes / tell me the right name)",
                        state, text, extra={"drugs": list(drugs_dict.values()) + unsure_new})
 
+    # keep only the 4 most recent drugs in conversation state, and put the ones named now first
+    cur = list(dict.fromkeys(current_atcs))
+    rest = [a for a in drugs_dict if a not in cur]
+    order = rest[-(4 - min(len(cur), 4)):] if len(cur) < 4 else []
+    if len(cur) >= 2:
+        active = cur
+    elif len(cur) == 1:
+        active = cur + rest[-1:]        # one new drug + the most recent carried one
+    else:
+        active = rest[-2:]              # nothing named now: the last two carried drugs
+    drugs_dict = {a: drugs_dict[a] for a in (order + cur) if a in drugs_dict}
+    drugs_dict = {a: drugs_dict[a] for a in dict.fromkeys(active + list(drugs_dict))}
     state["drugs"] = drugs_dict
     state["pending"] = unsure_new[:1]   # offered as a side question after the answer
-    drug_list = list(drugs_dict.values())
-    n_drugs = len(drug_list)
+    drug_list = [drugs_dict[a] for a in drugs_dict]
+    active_list = [drugs_dict[a] for a in active if a in drugs_dict]
+    n_drugs = len(active_list)
 
     # 3. What is the user actually asking? (brand-aware matching + topic/
     # intent detection replace the old "always assume interaction" logic)
@@ -619,7 +537,7 @@ def answer(text: str, image_bytes: bytes = None, state: dict = None) -> dict:
     # 5. Gather evidence per intent via the Knowledge facade
     kn = _get_knowledge()
     evidence, gaps, notes, gap_items = [], [], [], []
-    lookup_drugs = drug_list[:MAX_DRUGS_PER_LOOKUP]
+    lookup_drugs = active_list[:MAX_DRUGS_PER_LOOKUP]
 
     if "interaction" in intent_list and n_drugs >= 2:
         a, b = lookup_drugs[0], lookup_drugs[1]
