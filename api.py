@@ -11,17 +11,11 @@ import binascii
 import threading
 from typing import Optional
 
-try:
-    from dotenv import load_dotenv
-    load_dotenv()          # read GROQ_API_KEY / LLM_BACKEND from .env before chatbot is imported
-except ImportError:
-    pass
-
 import uvicorn
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 
-from chatbot import LLMUnavailable, answer
+from chatbot import answer
 
 app = FastAPI(title="MediCheck Sverige API")
 _gpu_lock = threading.Lock()   # one generation at a time: the model/GPU is shared
@@ -66,16 +60,13 @@ def _decode_image(b64: Optional[str]) -> Optional[bytes]:
 def answer_endpoint(req: AnswerRequest):
     image_bytes = _decode_image(req.image_b64)
     with _gpu_lock:
-        try:
-            return answer(text=req.text, image_bytes=image_bytes, state=req.state or {})
-        except LLMUnavailable as e:        # hosted model quota/key/network problem -> the app shows "service down"
-            raise HTTPException(status_code=503, detail=str(e))
+        return answer(text=req.text, image_bytes=image_bytes, state=req.state or {})
 
 
 if __name__ == "__main__":
     # Pay the model/index load time now, so the first user request is not slow
     # (the app times out after B_TIMEOUT seconds, default 120).
     import chatbot
-    chatbot._load_model()          # no-op when LLM_BACKEND=groq
+    chatbot._load_model()
     chatbot._get_knowledge()
     uvicorn.run(app, host="0.0.0.0", port=8000)
