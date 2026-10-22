@@ -503,7 +503,10 @@ def answer(text: str, image_bytes: bytes = None, state: dict = None) -> dict:
     if unsure_new and (not drugs_dict or only_unsure):
         state["drugs"] = drugs_dict
         state["pending"] = unsure_new
-        names = ", ".join(c["name"] for c in unsure_new)
+        def _lbl(c):
+            m = (c.get("matched_as") or "").strip()
+            return f"{m.capitalize()} ({c['name']})" if m and m.lower() != c["name"].lower() else c["name"]
+        names = ", ".join(_lbl(c) for c in unsure_new)
         return _finish("needs_confirmation",
                        f"I found: {names}. Is that correct? (yes / tell me the right name)",
                        state, text, extra={"drugs": list(drugs_dict.values()) + unsure_new})
@@ -524,12 +527,16 @@ def answer(text: str, image_bytes: bytes = None, state: dict = None) -> dict:
     state["pending"] = unsure_new[:1]   # offered as a side question after the answer
     drug_list = [drugs_dict[a] for a in drugs_dict]
     active_list = [drugs_dict[a] for a in active if a in drugs_dict]
+    if affirmed and promoted_atcs:      # "yes" to a suggested drug -> answer about THAT drug only
+        active_list = [drugs_dict[a] for a in promoted_atcs if a in drugs_dict]
     n_drugs = len(active_list)
 
     # 3. What is the user actually asking? (brand-aware matching + topic/
     # intent detection replace the old "always assume interaction" logic)
     topics_found = detect_topics(text)
     intent_list = detect_intents(text, n_drugs, topics_found)
+    if affirmed:                        # a bare "yes" asks nothing else: explain what the drug is
+        intent_list = ["indication"]
 
     # 4. First-turn cache check (see _cache_get's docstring for why only first-turn)
     is_first_turn = not state["history"]
